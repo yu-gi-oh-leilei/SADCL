@@ -1,0 +1,626 @@
+[05/14 23:28:06.936]: Command: main_mlc_supcon.py -a Q2L-R101-448 --dataset_dir /media/data/maleilei/MLICdataset/ --backbone resnet101 --dataname coco14 --batch-size 64 --print-freq 100 --output ./checkpoint/SADCL/ResNet_448_MSCOCO14/fixed_s2ploss/work7 --world-size 1 --rank 0 --dist-url tcp://127.0.0.1:3718 --gamma_pos 0 --gamma_neg 0 --dtgfl --loss_clip 0 --epochs 80 --lr 5e-5 --optim AdamW --pretrained --num_class 80 --img_size 448 --weight-decay 5e-3 --cutout --n_holes 1 --cut_fact 0.5 --length 224 --hidden_dim 2048 --dim_feedforward 8192 --enc_layers 1 --dec_layers 2 --nheads 4 --position_embedding v2 --early-stop --amp --ema-decay 0.9998 --seed 1 --lr_scheduler OneCycleLR --pattern_parameters single_lr --resume ./checkpoint/Q2L/ResNet_448_MSCOCO14/newattention_bs64_85/model_best.pth.tar --gpus 0,1 --crop
+[05/14 23:28:06.936]: world size: 2
+[05/14 23:28:06.936]: dist.get_rank(): 1
+[05/14 23:28:06.936]: local_rank: 1
+[05/14 23:28:06.937]: ==========================================
+[05/14 23:28:06.937]: ==========       CONFIG      =============
+[05/14 23:28:06.937]: ==========================================
+[05/14 23:28:06.937]: dataname: coco14
+[05/14 23:28:06.937]: dataset_dir: /media/data/maleilei/MLICdataset/
+[05/14 23:28:06.937]: img_size: 448
+[05/14 23:28:06.937]: output: ./checkpoint/SADCL/ResNet_448_MSCOCO14/fixed_s2ploss/work7
+[05/14 23:28:06.937]: num_class: 80
+[05/14 23:28:06.937]: pretrained: True
+[05/14 23:28:06.937]: frozen_backbone: False
+[05/14 23:28:06.937]: optim: AdamW
+[05/14 23:28:06.937]: lr_scheduler: OneCycleLR
+[05/14 23:28:06.937]: pattern_parameters: single_lr
+[05/14 23:28:06.937]: momentum: 0.9
+[05/14 23:28:06.937]: warmup_epoch: 0
+[05/14 23:28:06.937]: warmup_scheduler: False
+[05/14 23:28:06.937]: max_clip_grad_norm: 10.0
+[05/14 23:28:06.937]: epoch_step: [10, 20]
+[05/14 23:28:06.938]: arch: Q2L-R101-448
+[05/14 23:28:06.938]: eps: 1e-05
+[05/14 23:28:06.938]: dtgfl: True
+[05/14 23:28:06.938]: gamma_pos: 0.0
+[05/14 23:28:06.938]: gamma_neg: 0.0
+[05/14 23:28:06.938]: loss_dev: -1
+[05/14 23:28:06.938]: loss_clip: 0.0
+[05/14 23:28:06.938]: workers: 8
+[05/14 23:28:06.938]: epochs: 80
+[05/14 23:28:06.938]: val_interval: 1
+[05/14 23:28:06.938]: start_epoch: 0
+[05/14 23:28:06.938]: batch_size: 64
+[05/14 23:28:06.938]: lr: 5e-05
+[05/14 23:28:06.938]: lrp: 0.1
+[05/14 23:28:06.938]: weight_decay: 0.005
+[05/14 23:28:06.938]: print_freq: 100
+[05/14 23:28:06.938]: resume: ./checkpoint/Q2L/ResNet_448_MSCOCO14/newattention_bs64_85/model_best.pth.tar
+[05/14 23:28:06.938]: resume_omit: []
+[05/14 23:28:06.938]: evaluate: False
+[05/14 23:28:06.939]: ema_decay: 0.9998
+[05/14 23:28:06.939]: ema_epoch: 0
+[05/14 23:28:06.939]: use_BN: False
+[05/14 23:28:06.939]: world_size: 2
+[05/14 23:28:06.939]: rank: 1
+[05/14 23:28:06.939]: dist_url: tcp://127.0.0.1:3718
+[05/14 23:28:06.939]: seed: 1
+[05/14 23:28:06.939]: local_rank: 1
+[05/14 23:28:06.939]: crop: True
+[05/14 23:28:06.939]: cutout: True
+[05/14 23:28:06.939]: n_holes: 1
+[05/14 23:28:06.939]: length: 224
+[05/14 23:28:06.939]: cut_fact: 0.5
+[05/14 23:28:06.939]: orid_norm: False
+[05/14 23:28:06.939]: remove_norm: False
+[05/14 23:28:06.939]: mix_up: False
+[05/14 23:28:06.939]: enc_layers: 1
+[05/14 23:28:06.939]: dec_layers: 2
+[05/14 23:28:06.940]: dim_feedforward: 8192
+[05/14 23:28:06.940]: hidden_dim: 2048
+[05/14 23:28:06.940]: dropout: 0.1
+[05/14 23:28:06.940]: nheads: 4
+[05/14 23:28:06.940]: pre_norm: False
+[05/14 23:28:06.940]: position_embedding: v2
+[05/14 23:28:06.940]: backbone: resnet101
+[05/14 23:28:06.940]: keep_other_self_attn_dec: False
+[05/14 23:28:06.940]: keep_first_self_attn_dec: False
+[05/14 23:28:06.940]: keep_input_proj: False
+[05/14 23:28:06.940]: amp: True
+[05/14 23:28:06.940]: early_stop: True
+[05/14 23:28:06.940]: kill_stop: False
+[05/14 23:28:06.940]: out_aps: False
+[05/14 23:28:06.940]: gpus: 1
+[05/14 23:28:06.940]: ==========================================
+[05/14 23:28:06.940]: ===========        END        ============
+[05/14 23:28:06.940]: ==========================================
+[05/14 23:28:06.940]: 
+
+[05/14 23:28:12.230]: number of params:200037456
+[05/14 23:28:12.231]: params:
+{
+  "module.prototype": 163840,
+  "module.backbone.0.body.layer2.0.conv1.weight": 32768,
+  "module.backbone.0.body.layer2.0.conv2.weight": 147456,
+  "module.backbone.0.body.layer2.0.conv3.weight": 65536,
+  "module.backbone.0.body.layer2.0.downsample.0.weight": 131072,
+  "module.backbone.0.body.layer2.1.conv1.weight": 65536,
+  "module.backbone.0.body.layer2.1.conv2.weight": 147456,
+  "module.backbone.0.body.layer2.1.conv3.weight": 65536,
+  "module.backbone.0.body.layer2.2.conv1.weight": 65536,
+  "module.backbone.0.body.layer2.2.conv2.weight": 147456,
+  "module.backbone.0.body.layer2.2.conv3.weight": 65536,
+  "module.backbone.0.body.layer2.3.conv1.weight": 65536,
+  "module.backbone.0.body.layer2.3.conv2.weight": 147456,
+  "module.backbone.0.body.layer2.3.conv3.weight": 65536,
+  "module.backbone.0.body.layer3.0.conv1.weight": 131072,
+  "module.backbone.0.body.layer3.0.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.0.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.0.downsample.0.weight": 524288,
+  "module.backbone.0.body.layer3.1.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.1.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.1.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.2.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.2.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.2.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.3.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.3.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.3.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.4.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.4.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.4.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.5.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.5.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.5.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.6.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.6.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.6.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.7.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.7.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.7.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.8.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.8.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.8.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.9.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.9.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.9.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.10.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.10.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.10.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.11.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.11.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.11.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.12.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.12.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.12.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.13.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.13.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.13.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.14.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.14.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.14.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.15.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.15.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.15.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.16.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.16.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.16.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.17.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.17.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.17.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.18.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.18.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.18.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.19.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.19.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.19.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.20.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.20.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.20.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.21.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.21.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.21.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.22.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.22.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.22.conv3.weight": 262144,
+  "module.backbone.0.body.layer4.0.conv1.weight": 524288,
+  "module.backbone.0.body.layer4.0.conv2.weight": 2359296,
+  "module.backbone.0.body.layer4.0.conv3.weight": 1048576,
+  "module.backbone.0.body.layer4.0.downsample.0.weight": 2097152,
+  "module.backbone.0.body.layer4.1.conv1.weight": 1048576,
+  "module.backbone.0.body.layer4.1.conv2.weight": 2359296,
+  "module.backbone.0.body.layer4.1.conv3.weight": 1048576,
+  "module.backbone.0.body.layer4.2.conv1.weight": 1048576,
+  "module.backbone.0.body.layer4.2.conv2.weight": 2359296,
+  "module.backbone.0.body.layer4.2.conv3.weight": 1048576,
+  "module.transformer.encoder.layers.0.self_attn.in_proj_weight": 12582912,
+  "module.transformer.encoder.layers.0.self_attn.in_proj_bias": 6144,
+  "module.transformer.encoder.layers.0.self_attn.out_proj.weight": 4194304,
+  "module.transformer.encoder.layers.0.self_attn.out_proj.bias": 2048,
+  "module.transformer.encoder.layers.0.linear1.weight": 16777216,
+  "module.transformer.encoder.layers.0.linear1.bias": 8192,
+  "module.transformer.encoder.layers.0.linear2.weight": 16777216,
+  "module.transformer.encoder.layers.0.linear2.bias": 2048,
+  "module.transformer.encoder.layers.0.norm1.weight": 2048,
+  "module.transformer.encoder.layers.0.norm1.bias": 2048,
+  "module.transformer.encoder.layers.0.norm2.weight": 2048,
+  "module.transformer.encoder.layers.0.norm2.bias": 2048,
+  "module.transformer.decoder.layers.0.multihead_attn.in_proj_weight": 12582912,
+  "module.transformer.decoder.layers.0.multihead_attn.in_proj_bias": 6144,
+  "module.transformer.decoder.layers.0.multihead_attn.out_proj.weight": 4194304,
+  "module.transformer.decoder.layers.0.multihead_attn.out_proj.bias": 2048,
+  "module.transformer.decoder.layers.0.linear1.weight": 16777216,
+  "module.transformer.decoder.layers.0.linear1.bias": 8192,
+  "module.transformer.decoder.layers.0.linear2.weight": 16777216,
+  "module.transformer.decoder.layers.0.linear2.bias": 2048,
+  "module.transformer.decoder.layers.0.norm2.weight": 2048,
+  "module.transformer.decoder.layers.0.norm2.bias": 2048,
+  "module.transformer.decoder.layers.0.norm3.weight": 2048,
+  "module.transformer.decoder.layers.0.norm3.bias": 2048,
+  "module.transformer.decoder.layers.1.multihead_attn.in_proj_weight": 12582912,
+  "module.transformer.decoder.layers.1.multihead_attn.in_proj_bias": 6144,
+  "module.transformer.decoder.layers.1.multihead_attn.out_proj.weight": 4194304,
+  "module.transformer.decoder.layers.1.multihead_attn.out_proj.bias": 2048,
+  "module.transformer.decoder.layers.1.linear1.weight": 16777216,
+  "module.transformer.decoder.layers.1.linear1.bias": 8192,
+  "module.transformer.decoder.layers.1.linear2.weight": 16777216,
+  "module.transformer.decoder.layers.1.linear2.bias": 2048,
+  "module.transformer.decoder.layers.1.norm2.weight": 2048,
+  "module.transformer.decoder.layers.1.norm2.bias": 2048,
+  "module.transformer.decoder.layers.1.norm3.weight": 2048,
+  "module.transformer.decoder.layers.1.norm3.bias": 2048,
+  "module.transformer.decoder.norm.weight": 2048,
+  "module.transformer.decoder.norm.bias": 2048,
+  "module.query_embed.weight": 163840,
+  "module.fc.W": 163840,
+  "module.fc.b": 80,
+  "module.proj_head.layers.0.weight": 4194304,
+  "module.proj_head.layers.0.bias": 2048,
+  "module.proj_head.layers.1.weight": 2097152,
+  "module.proj_head.layers.1.bias": 1024
+}
+[05/14 23:28:12.231]: lr: 5e-05
+[05/14 23:28:12.232]: => loading checkpoint './checkpoint/Q2L/ResNet_448_MSCOCO14/newattention_bs64_85/model_best.pth.tar'
+[05/14 23:28:14.389]: Omitting []
+[05/14 23:28:14.405]: => loaded checkpoint './checkpoint/Q2L/ResNet_448_MSCOCO14/newattention_bs64_85/model_best.pth.tar' (epoch 19)
+[05/14 23:28:31.803]: lr:2.000000000000001e-06
+[05/14 23:28:40.578]: Epoch: [0/80][   0/1293]  T 8.773 (8.773)  DT 2.668 (2.668)  S1 3.6 (3.6)  SA 7.3 (7.3)  LR 2.000e-06  Loss 408.130 (408.130)  Loss_bce 210.927 (210.927)  losses_contras_s2s 72.559 (72.559)  losses_contras_p2s 124.644 (124.644)  Mem 14786
+[05/14 23:29:37.076]: Epoch: [0/80][ 100/1293]  T 0.564 (0.646)  DT 0.000 (0.027)  S1 56.8 (49.5)  SA 113.5 (99.0)  LR 2.003e-06  Loss 252.068 (286.723)  Loss_bce 78.918 (109.640)  losses_contras_s2s 96.213 (73.051)  losses_contras_p2s 76.937 (104.031)  Mem 15706
+[05/14 23:30:33.444]: Epoch: [0/80][ 200/1293]  T 0.558 (0.605)  DT 0.000 (0.014)  S1 57.3 (52.9)  SA 114.7 (105.8)  LR 2.011e-06  Loss 214.714 (247.331)  Loss_bce 60.426 (84.808)  losses_contras_s2s 74.936 (71.494)  losses_contras_p2s 79.352 (91.029)  Mem 15706
+[05/14 23:31:29.780]: Epoch: [0/80][ 300/1293]  T 0.555 (0.591)  DT 0.000 (0.009)  S1 57.6 (54.1)  SA 115.3 (108.2)  LR 2.025e-06  Loss 191.344 (229.609)  Loss_bce 59.882 (74.874)  losses_contras_s2s 47.076 (69.496)  losses_contras_p2s 84.386 (85.239)  Mem 15706
+[05/14 23:32:25.910]: Epoch: [0/80][ 400/1293]  T 0.558 (0.584)  DT 0.000 (0.007)  S1 57.3 (54.8)  SA 114.6 (109.6)  LR 2.044e-06  Loss 181.763 (220.081)  Loss_bce 48.998 (68.698)  losses_contras_s2s 50.523 (67.882)  losses_contras_p2s 82.242 (83.500)  Mem 15706
+[05/14 23:33:22.149]: Epoch: [0/80][ 500/1293]  T 0.571 (0.580)  DT 0.000 (0.006)  S1 56.0 (55.2)  SA 112.0 (110.4)  LR 2.069e-06  Loss 179.814 (213.120)  Loss_bce 51.307 (64.899)  losses_contras_s2s 58.602 (66.948)  losses_contras_p2s 69.905 (81.273)  Mem 15706
+[05/14 23:34:18.419]: Epoch: [0/80][ 600/1293]  T 0.562 (0.577)  DT 0.000 (0.005)  S1 57.0 (55.5)  SA 114.0 (111.0)  LR 2.100e-06  Loss 188.103 (208.593)  Loss_bce 53.864 (62.294)  losses_contras_s2s 77.431 (66.534)  losses_contras_p2s 56.808 (79.765)  Mem 15706
+[05/14 23:35:14.654]: Epoch: [0/80][ 700/1293]  T 0.562 (0.575)  DT 0.000 (0.004)  S1 57.0 (55.7)  SA 114.0 (111.4)  LR 2.136e-06  Loss 182.177 (204.388)  Loss_bce 53.166 (60.060)  losses_contras_s2s 63.054 (65.635)  losses_contras_p2s 65.956 (78.693)  Mem 15706
+[05/14 23:36:11.013]: Epoch: [0/80][ 800/1293]  T 0.562 (0.573)  DT 0.000 (0.004)  S1 57.0 (55.8)  SA 114.0 (111.6)  LR 2.177e-06  Loss 160.755 (201.467)  Loss_bce 43.972 (58.385)  losses_contras_s2s 55.346 (65.438)  losses_contras_p2s 61.437 (77.644)  Mem 15706
+[05/14 23:37:08.387]: Epoch: [0/80][ 900/1293]  T 0.576 (0.573)  DT 0.000 (0.003)  S1 55.5 (55.8)  SA 111.0 (111.6)  LR 2.224e-06  Loss 177.990 (198.668)  Loss_bce 41.723 (56.887)  losses_contras_s2s 70.896 (65.057)  losses_contras_p2s 65.372 (76.724)  Mem 15706
+[05/14 23:38:05.675]: Epoch: [0/80][1000/1293]  T 0.578 (0.573)  DT 0.000 (0.003)  S1 55.4 (55.8)  SA 110.8 (111.6)  LR 2.277e-06  Loss 184.027 (196.237)  Loss_bce 38.180 (55.624)  losses_contras_s2s 75.763 (64.697)  losses_contras_p2s 70.083 (75.915)  Mem 15706
+[05/14 23:39:05.888]: Epoch: [0/80][1100/1293]  T 0.567 (0.576)  DT 0.000 (0.003)  S1 56.5 (55.6)  SA 112.9 (111.1)  LR 2.335e-06  Loss 186.284 (194.258)  Loss_bce 41.731 (54.753)  losses_contras_s2s 62.794 (64.404)  losses_contras_p2s 81.759 (75.101)  Mem 15706
+[05/14 23:40:03.019]: Epoch: [0/80][1200/1293]  T 0.577 (0.576)  DT 0.000 (0.003)  S1 55.4 (55.6)  SA 110.9 (111.2)  LR 2.398e-06  Loss 156.575 (192.342)  Loss_bce 43.869 (53.839)  losses_contras_s2s 53.553 (64.116)  losses_contras_p2s 59.153 (74.387)  Mem 15706
+[05/14 23:43:39.156]: => synchronize...
+[05/14 23:46:45.509]: => synchronize...
+[05/14 23:47:09.261]: => Test Epoch: [ 0/80]  ETA 1 day, 0:31:30  TT 0:18:37 (0:18:37)  Loss 166.937  Loss_bce 41.746  Loss_contras 125.365  mAP 0.00000  Loss_ema 332.226  Loss_bce_ema 160.614  Loss_contrast_ema 171.849  mAP_ema 0.00000
+[05/14 23:47:09.266]: 0 | Set best mAP 0 in ep -1
+[05/14 23:47:09.266]:    | best regular mAP 0 in ep -1
+[05/14 23:47:09.272]: lr:2.4611977119243223e-06
+[05/14 23:47:15.765]: Epoch: [1/80][   0/1293]  T 6.491 (6.491)  DT 2.363 (2.363)  S1 4.9 (4.9)  SA 9.9 (9.9)  LR 2.462e-06  Loss 185.891 (185.891)  Loss_bce 33.921 (33.921)  losses_contras_s2s 53.547 (53.547)  losses_contras_p2s 98.424 (98.424)  Mem 15706
+[05/14 23:48:12.559]: Epoch: [1/80][ 100/1293]  T 0.567 (0.627)  DT 0.000 (0.024)  S1 56.4 (51.1)  SA 112.8 (102.1)  LR 2.536e-06  Loss 204.245 (173.466)  Loss_bce 52.989 (42.545)  losses_contras_s2s 85.607 (62.983)  losses_contras_p2s 65.649 (67.939)  Mem 15706
+[05/14 23:49:09.419]: Epoch: [1/80][ 200/1293]  T 0.570 (0.598)  DT 0.000 (0.012)  S1 56.1 (53.5)  SA 112.2 (107.1)  LR 2.615e-06  Loss 157.924 (170.903)  Loss_bce 40.225 (42.544)  losses_contras_s2s 51.889 (62.425)  losses_contras_p2s 65.809 (65.933)  Mem 15706
+[05/14 23:50:06.443]: Epoch: [1/80][ 300/1293]  T 0.573 (0.589)  DT 0.000 (0.008)  S1 55.8 (54.4)  SA 111.7 (108.7)  LR 2.700e-06  Loss 175.456 (171.047)  Loss_bce 50.320 (42.740)  losses_contras_s2s 67.921 (62.697)  losses_contras_p2s 57.215 (65.610)  Mem 15706
+[05/14 23:51:03.716]: Epoch: [1/80][ 400/1293]  T 0.581 (0.585)  DT 0.000 (0.006)  S1 55.0 (54.7)  SA 110.1 (109.5)  LR 2.790e-06  Loss 172.201 (169.531)  Loss_bce 47.441 (42.758)  losses_contras_s2s 59.143 (61.197)  losses_contras_p2s 65.618 (65.576)  Mem 15706
+[05/14 23:52:01.403]: Epoch: [1/80][ 500/1293]  T 0.583 (0.583)  DT 0.000 (0.005)  S1 54.9 (54.9)  SA 109.8 (109.8)  LR 2.885e-06  Loss 135.707 (169.550)  Loss_bce 28.395 (42.511)  losses_contras_s2s 50.896 (61.210)  losses_contras_p2s 56.416 (65.830)  Mem 15706
+[05/14 23:52:58.220]: Epoch: [1/80][ 600/1293]  T 0.567 (0.581)  DT 0.000 (0.004)  S1 56.4 (55.1)  SA 112.9 (110.2)  LR 2.986e-06  Loss 173.939 (168.853)  Loss_bce 58.734 (42.122)  losses_contras_s2s 57.244 (60.812)  losses_contras_p2s 57.962 (65.919)  Mem 15706
+[05/14 23:53:55.036]: Epoch: [1/80][ 700/1293]  T 0.569 (0.579)  DT 0.000 (0.004)  S1 56.2 (55.3)  SA 112.4 (110.6)  LR 3.092e-06  Loss 162.547 (168.202)  Loss_bce 35.459 (41.951)  losses_contras_s2s 66.735 (60.616)  losses_contras_p2s 60.353 (65.635)  Mem 15706
+[05/14 23:54:51.703]: Epoch: [1/80][ 800/1293]  T 0.562 (0.577)  DT 0.000 (0.003)  S1 56.9 (55.4)  SA 113.8 (110.9)  LR 3.203e-06  Loss 165.689 (167.703)  Loss_bce 36.709 (41.796)  losses_contras_s2s 55.443 (60.377)  losses_contras_p2s 73.537 (65.530)  Mem 15706
+[05/14 23:55:48.392]: Epoch: [1/80][ 900/1293]  T 0.564 (0.576)  DT 0.000 (0.003)  S1 56.7 (55.5)  SA 113.4 (111.1)  LR 3.320e-06  Loss 147.864 (166.910)  Loss_bce 47.669 (41.694)  losses_contras_s2s 46.409 (59.809)  losses_contras_p2s 53.786 (65.407)  Mem 15706
+[05/14 23:56:45.227]: Epoch: [1/80][1000/1293]  T 0.566 (0.575)  DT 0.000 (0.003)  S1 56.5 (55.6)  SA 113.0 (111.2)  LR 3.442e-06  Loss 180.502 (167.015)  Loss_bce 39.104 (41.724)  losses_contras_s2s 76.539 (59.994)  losses_contras_p2s 64.859 (65.297)  Mem 15706
+[05/14 23:57:41.836]: Epoch: [1/80][1100/1293]  T 0.566 (0.575)  DT 0.000 (0.002)  S1 56.6 (55.7)  SA 113.1 (111.4)  LR 3.569e-06  Loss 176.383 (167.032)  Loss_bce 37.754 (41.685)  losses_contras_s2s 78.449 (59.936)  losses_contras_p2s 60.181 (65.411)  Mem 15706
+[05/14 23:58:38.456]: Epoch: [1/80][1200/1293]  T 0.582 (0.574)  DT 0.000 (0.002)  S1 55.0 (55.8)  SA 110.0 (111.5)  LR 3.701e-06  Loss 195.048 (166.578)  Loss_bce 34.537 (41.490)  losses_contras_s2s 85.558 (59.726)  losses_contras_p2s 74.952 (65.362)  Mem 15706
+[05/15 00:02:14.094]: => synchronize...
+[05/15 00:05:22.298]: => synchronize...
+[05/15 00:05:43.531]: => Test Epoch: [ 1/80]  ETA 1 day, 0:10:43  TT 0:18:34 (0:37:11)  Loss 163.740  Loss_bce 39.212  Loss_contras 124.701  mAP 0.00000  Loss_ema 246.590  Loss_bce_ema 114.898  Loss_contrast_ema 131.874  mAP_ema 0.00000
+[05/15 00:05:43.536]: 1 | Set best mAP 0 in ep -1
+[05/15 00:05:43.536]:    | best regular mAP 0 in ep -1
+[05/15 00:05:43.611]: lr:3.827065570240287e-06
+[05/15 00:05:46.513]: Epoch: [2/80][   0/1293]  T 2.900 (2.900)  DT 2.319 (2.319)  S1 11.0 (11.0)  SA 22.1 (22.1)  LR 3.828e-06  Loss 138.416 (138.416)  Loss_bce 35.491 (35.491)  losses_contras_s2s 31.542 (31.542)  losses_contras_p2s 71.383 (71.383)  Mem 15706
+[05/15 00:06:42.135]: Epoch: [2/80][ 100/1293]  T 0.553 (0.579)  DT 0.000 (0.023)  S1 57.8 (55.2)  SA 115.6 (110.5)  LR 3.971e-06  Loss 150.706 (159.989)  Loss_bce 33.682 (39.537)  losses_contras_s2s 43.122 (55.880)  losses_contras_p2s 73.902 (64.572)  Mem 15706
+[05/15 00:07:37.950]: Epoch: [2/80][ 200/1293]  T 0.557 (0.569)  DT 0.000 (0.012)  S1 57.5 (56.3)  SA 115.0 (112.5)  LR 4.118e-06  Loss 184.277 (161.191)  Loss_bce 38.741 (40.002)  losses_contras_s2s 79.855 (57.067)  losses_contras_p2s 65.681 (64.122)  Mem 15706
+[05/15 00:08:33.605]: Epoch: [2/80][ 300/1293]  T 0.558 (0.565)  DT 0.000 (0.008)  S1 57.4 (56.7)  SA 114.8 (113.3)  LR 4.270e-06  Loss 172.524 (160.612)  Loss_bce 45.563 (39.366)  losses_contras_s2s 53.666 (56.619)  losses_contras_p2s 73.295 (64.627)  Mem 15706
+[05/15 00:09:29.136]: Epoch: [2/80][ 400/1293]  T 0.558 (0.562)  DT 0.000 (0.006)  S1 57.4 (56.9)  SA 114.7 (113.8)  LR 4.427e-06  Loss 158.279 (160.889)  Loss_bce 26.577 (39.560)  losses_contras_s2s 57.431 (57.016)  losses_contras_p2s 74.271 (64.313)  Mem 15706
+[05/15 00:10:24.804]: Epoch: [2/80][ 500/1293]  T 0.555 (0.561)  DT 0.000 (0.005)  S1 57.7 (57.0)  SA 115.4 (114.0)  LR 4.589e-06  Loss 190.509 (161.357)  Loss_bce 33.465 (39.530)  losses_contras_s2s 76.939 (57.280)  losses_contras_p2s 80.106 (64.547)  Mem 15706
+[05/15 00:11:20.301]: Epoch: [2/80][ 600/1293]  T 0.555 (0.560)  DT 0.000 (0.004)  S1 57.6 (57.1)  SA 115.3 (114.2)  LR 4.756e-06  Loss 151.156 (161.093)  Loss_bce 50.798 (39.664)  losses_contras_s2s 48.318 (56.973)  losses_contras_p2s 52.040 (64.456)  Mem 15706
+[05/15 00:12:15.833]: Epoch: [2/80][ 700/1293]  T 0.556 (0.560)  DT 0.000 (0.004)  S1 57.6 (57.2)  SA 115.2 (114.4)  LR 4.929e-06  Loss 149.217 (161.003)  Loss_bce 33.189 (39.615)  losses_contras_s2s 57.401 (56.979)  losses_contras_p2s 58.627 (64.408)  Mem 15706
+[05/15 00:13:11.307]: Epoch: [2/80][ 800/1293]  T 0.557 (0.559)  DT 0.000 (0.003)  S1 57.5 (57.3)  SA 115.0 (114.5)  LR 5.105e-06  Loss 160.320 (160.880)  Loss_bce 44.066 (39.582)  losses_contras_s2s 60.137 (56.873)  losses_contras_p2s 56.117 (64.425)  Mem 15706
+[05/15 00:14:06.854]: Epoch: [2/80][ 900/1293]  T 0.554 (0.559)  DT 0.000 (0.003)  S1 57.8 (57.3)  SA 115.6 (114.6)  LR 5.287e-06  Loss 191.611 (161.267)  Loss_bce 30.861 (39.634)  losses_contras_s2s 82.009 (57.220)  losses_contras_p2s 78.740 (64.412)  Mem 15706
+[05/15 00:15:02.345]: Epoch: [2/80][1000/1293]  T 0.572 (0.558)  DT 0.000 (0.003)  S1 55.9 (57.3)  SA 111.9 (114.7)  LR 5.474e-06  Loss 162.773 (161.010)  Loss_bce 36.387 (39.573)  losses_contras_s2s 63.075 (56.979)  losses_contras_p2s 63.310 (64.457)  Mem 15706
+[05/15 00:15:57.887]: Epoch: [2/80][1100/1293]  T 0.591 (0.558)  DT 0.000 (0.002)  S1 54.2 (57.4)  SA 108.4 (114.7)  LR 5.665e-06  Loss 184.844 (160.988)  Loss_bce 48.713 (39.627)  losses_contras_s2s 76.892 (57.063)  losses_contras_p2s 59.239 (64.298)  Mem 15706
+[05/15 00:16:53.510]: Epoch: [2/80][1200/1293]  T 0.551 (0.558)  DT 0.000 (0.002)  S1 58.1 (57.4)  SA 116.1 (114.7)  LR 5.861e-06  Loss 157.790 (160.985)  Loss_bce 32.739 (39.584)  losses_contras_s2s 52.094 (57.046)  losses_contras_p2s 72.958 (64.355)  Mem 15706
+[05/15 00:20:28.024]: => synchronize...
+[05/15 00:23:33.028]: => synchronize...
+[05/15 00:23:54.423]: => Test Epoch: [ 2/80]  ETA 23:41:24  TT 0:18:10 (0:55:22)  Loss 158.200  Loss_bce 38.521  Loss_contras 119.845  mAP 0.00000  Loss_ema 190.510  Loss_bce_ema 83.822  Loss_contrast_ema 106.835  mAP_ema 0.00000
+[05/15 00:23:54.428]: 2 | Set best mAP 0 in ep -1
+[05/15 00:23:54.428]:    | best regular mAP 0 in ep -1
+[05/15 00:23:54.497]: lr:6.045108980694017e-06
+[05/15 00:23:57.344]: Epoch: [3/80][   0/1293]  T 2.844 (2.844)  DT 2.121 (2.121)  S1 11.3 (11.3)  SA 22.5 (22.5)  LR 6.047e-06  Loss 166.898 (166.898)  Loss_bce 30.648 (30.648)  losses_contras_s2s 67.498 (67.498)  losses_contras_p2s 68.753 (68.753)  Mem 15706
+[05/15 00:24:53.059]: Epoch: [3/80][ 100/1293]  T 0.552 (0.580)  DT 0.000 (0.021)  S1 58.0 (55.2)  SA 116.0 (110.4)  LR 6.252e-06  Loss 151.485 (157.045)  Loss_bce 41.872 (38.945)  losses_contras_s2s 55.491 (55.173)  losses_contras_p2s 54.122 (62.927)  Mem 15706
+[05/15 00:25:49.097]: Epoch: [3/80][ 200/1293]  T 0.553 (0.570)  DT 0.000 (0.011)  S1 57.8 (56.1)  SA 115.7 (112.3)  LR 6.461e-06  Loss 157.162 (156.510)  Loss_bce 41.728 (38.845)  losses_contras_s2s 52.555 (55.378)  losses_contras_p2s 62.880 (62.287)  Mem 15706
+[05/15 00:26:45.169]: Epoch: [3/80][ 300/1293]  T 0.554 (0.567)  DT 0.000 (0.007)  S1 57.8 (56.4)  SA 115.6 (112.9)  LR 6.675e-06  Loss 124.144 (157.334)  Loss_bce 34.955 (39.025)  losses_contras_s2s 29.177 (55.367)  losses_contras_p2s 60.011 (62.942)  Mem 15706
+[05/15 00:27:41.053]: Epoch: [3/80][ 400/1293]  T 0.552 (0.565)  DT 0.000 (0.006)  S1 58.0 (56.6)  SA 116.0 (113.3)  LR 6.894e-06  Loss 161.245 (157.547)  Loss_bce 31.081 (39.011)  losses_contras_s2s 64.856 (55.369)  losses_contras_p2s 65.308 (63.168)  Mem 15706
+[05/15 00:28:37.068]: Epoch: [3/80][ 500/1293]  T 0.554 (0.564)  DT 0.000 (0.004)  S1 57.8 (56.7)  SA 115.5 (113.5)  LR 7.116e-06  Loss 169.003 (158.070)  Loss_bce 43.020 (38.897)  losses_contras_s2s 68.490 (55.869)  losses_contras_p2s 57.494 (63.305)  Mem 15706
+[05/15 00:29:33.152]: Epoch: [3/80][ 600/1293]  T 0.554 (0.563)  DT 0.000 (0.004)  S1 57.8 (56.8)  SA 115.5 (113.6)  LR 7.343e-06  Loss 184.586 (158.727)  Loss_bce 41.586 (38.600)  losses_contras_s2s 73.156 (56.077)  losses_contras_p2s 69.844 (64.049)  Mem 15706
+[05/15 00:30:29.214]: Epoch: [3/80][ 700/1293]  T 0.553 (0.563)  DT 0.000 (0.003)  S1 57.8 (56.8)  SA 115.7 (113.7)  LR 7.575e-06  Loss 151.468 (158.417)  Loss_bce 32.050 (38.672)  losses_contras_s2s 50.922 (56.006)  losses_contras_p2s 68.496 (63.739)  Mem 15706
+[05/15 00:31:25.193]: Epoch: [3/80][ 800/1293]  T 0.554 (0.563)  DT 0.000 (0.003)  S1 57.7 (56.9)  SA 115.4 (113.7)  LR 7.811e-06  Loss 180.688 (158.391)  Loss_bce 46.184 (38.723)  losses_contras_s2s 69.253 (55.872)  losses_contras_p2s 65.251 (63.797)  Mem 15706
+[05/15 00:32:21.238]: Epoch: [3/80][ 900/1293]  T 0.552 (0.562)  DT 0.000 (0.003)  S1 57.9 (56.9)  SA 115.9 (113.8)  LR 8.050e-06  Loss 166.051 (158.549)  Loss_bce 33.518 (38.788)  losses_contras_s2s 51.399 (56.081)  losses_contras_p2s 81.134 (63.680)  Mem 15706
+[05/15 00:33:17.301]: Epoch: [3/80][1000/1293]  T 0.553 (0.562)  DT 0.000 (0.002)  S1 57.9 (56.9)  SA 115.8 (113.8)  LR 8.294e-06  Loss 180.913 (158.518)  Loss_bce 30.820 (38.626)  losses_contras_s2s 72.104 (56.060)  losses_contras_p2s 77.989 (63.832)  Mem 15706
+[05/15 00:34:13.352]: Epoch: [3/80][1100/1293]  T 0.553 (0.562)  DT 0.000 (0.002)  S1 57.8 (56.9)  SA 115.6 (113.9)  LR 8.543e-06  Loss 177.366 (158.464)  Loss_bce 48.751 (38.697)  losses_contras_s2s 64.460 (55.908)  losses_contras_p2s 64.155 (63.860)  Mem 15706
+[05/15 00:35:09.353]: Epoch: [3/80][1200/1293]  T 0.552 (0.562)  DT 0.000 (0.002)  S1 58.0 (56.9)  SA 116.0 (113.9)  LR 8.795e-06  Loss 141.515 (158.312)  Loss_bce 31.001 (38.734)  losses_contras_s2s 56.517 (55.847)  losses_contras_p2s 53.997 (63.730)  Mem 15706
+[05/15 00:38:45.157]: => synchronize...
+[05/15 00:41:50.148]: => synchronize...
+[05/15 00:42:11.623]: => Test Epoch: [ 3/80]  ETA 23:19:39  TT 0:18:17 (1:13:39)  Loss 155.473  Loss_bce 37.880  Loss_contras 117.755  mAP 0.00000  Loss_ema 165.301  Loss_bce_ema 64.949  Loss_contrast_ema 100.491  mAP_ema 0.00000
+[05/15 00:42:11.628]: 3 | Set best mAP 0 in ep -1
+[05/15 00:42:11.628]:    | best regular mAP 0 in ep -1
+[05/15 00:42:11.699]: lr:9.030081564464689e-06
+[05/15 00:42:14.659]: Epoch: [4/80][   0/1293]  T 2.958 (2.958)  DT 2.369 (2.369)  S1 10.8 (10.8)  SA 21.6 (21.6)  LR 9.033e-06  Loss 153.500 (153.500)  Loss_bce 30.434 (30.434)  losses_contras_s2s 57.346 (57.346)  losses_contras_p2s 65.720 (65.720)  Mem 15706
+[05/15 00:43:12.779]: Epoch: [4/80][ 100/1293]  T 0.554 (0.605)  DT 0.000 (0.024)  S1 57.7 (52.9)  SA 115.5 (105.8)  LR 9.292e-06  Loss 191.622 (154.375)  Loss_bce 51.034 (37.034)  losses_contras_s2s 78.578 (53.020)  losses_contras_p2s 62.010 (64.322)  Mem 15706
+[05/15 00:44:08.629]: Epoch: [4/80][ 200/1293]  T 0.557 (0.582)  DT 0.000 (0.012)  S1 57.4 (55.0)  SA 114.9 (110.0)  LR 9.556e-06  Loss 152.978 (154.797)  Loss_bce 43.907 (38.111)  losses_contras_s2s 24.793 (53.203)  losses_contras_p2s 84.278 (63.483)  Mem 15706
+[05/15 00:45:04.535]: Epoch: [4/80][ 300/1293]  T 0.559 (0.574)  DT 0.000 (0.008)  S1 57.2 (55.7)  SA 114.4 (111.5)  LR 9.823e-06  Loss 147.648 (155.487)  Loss_bce 34.183 (38.325)  losses_contras_s2s 42.798 (54.038)  losses_contras_p2s 70.667 (63.124)  Mem 15706
+[05/15 00:46:00.450]: Epoch: [4/80][ 400/1293]  T 0.565 (0.570)  DT 0.000 (0.006)  S1 56.6 (56.1)  SA 113.2 (112.2)  LR 1.009e-05  Loss 135.315 (155.881)  Loss_bce 22.059 (38.231)  losses_contras_s2s 49.151 (54.188)  losses_contras_p2s 64.106 (63.461)  Mem 15706
+[05/15 00:46:56.224]: Epoch: [4/80][ 500/1293]  T 0.554 (0.568)  DT 0.000 (0.005)  S1 57.8 (56.3)  SA 115.5 (112.7)  LR 1.037e-05  Loss 168.265 (156.309)  Loss_bce 35.437 (38.109)  losses_contras_s2s 58.785 (54.631)  losses_contras_p2s 74.043 (63.570)  Mem 15706
+[05/15 00:47:51.870]: Epoch: [4/80][ 600/1293]  T 0.558 (0.566)  DT 0.000 (0.004)  S1 57.3 (56.5)  SA 114.6 (113.1)  LR 1.065e-05  Loss 137.648 (155.270)  Loss_bce 35.769 (37.814)  losses_contras_s2s 32.176 (54.364)  losses_contras_p2s 69.702 (63.092)  Mem 15706
+[05/15 00:48:47.609]: Epoch: [4/80][ 700/1293]  T 0.569 (0.565)  DT 0.000 (0.004)  S1 56.3 (56.7)  SA 112.5 (113.3)  LR 1.093e-05  Loss 166.331 (155.528)  Loss_bce 33.012 (37.963)  losses_contras_s2s 69.655 (54.650)  losses_contras_p2s 63.663 (62.916)  Mem 15706
+[05/15 00:49:43.347]: Epoch: [4/80][ 800/1293]  T 0.561 (0.564)  DT 0.000 (0.003)  S1 57.0 (56.8)  SA 114.0 (113.5)  LR 1.121e-05  Loss 144.398 (155.715)  Loss_bce 28.375 (37.993)  losses_contras_s2s 57.643 (54.625)  losses_contras_p2s 58.379 (63.096)  Mem 15706
+[05/15 00:50:39.053]: Epoch: [4/80][ 900/1293]  T 0.558 (0.563)  DT 0.000 (0.003)  S1 57.4 (56.8)  SA 114.7 (113.7)  LR 1.150e-05  Loss 139.382 (155.852)  Loss_bce 45.238 (38.066)  losses_contras_s2s 55.717 (54.863)  losses_contras_p2s 38.427 (62.923)  Mem 15706
+[05/15 00:51:34.829]: Epoch: [4/80][1000/1293]  T 0.561 (0.563)  DT 0.000 (0.003)  S1 57.1 (56.9)  SA 114.1 (113.8)  LR 1.180e-05  Loss 154.270 (155.759)  Loss_bce 25.305 (37.974)  losses_contras_s2s 64.839 (54.811)  losses_contras_p2s 64.126 (62.973)  Mem 15706
+[05/15 00:52:30.477]: Epoch: [4/80][1100/1293]  T 0.555 (0.562)  DT 0.000 (0.002)  S1 57.7 (56.9)  SA 115.4 (113.9)  LR 1.209e-05  Loss 145.418 (155.619)  Loss_bce 37.265 (38.025)  losses_contras_s2s 57.678 (54.689)  losses_contras_p2s 50.474 (62.906)  Mem 15706
+[05/15 00:53:26.256]: Epoch: [4/80][1200/1293]  T 0.556 (0.562)  DT 0.000 (0.002)  S1 57.5 (57.0)  SA 115.1 (113.9)  LR 1.239e-05  Loss 164.405 (155.626)  Loss_bce 25.885 (38.075)  losses_contras_s2s 56.080 (54.665)  losses_contras_p2s 82.440 (62.885)  Mem 15706
+[05/15 00:57:01.407]: => synchronize...
+[05/15 01:00:06.576]: => synchronize...
+[05/15 01:00:27.467]: => Test Epoch: [ 4/80]  ETA 22:58:57  TT 0:18:15 (1:31:55)  Loss 158.076  Loss_bce 37.734  Loss_contras 120.509  mAP 0.00000  Loss_ema 158.156  Loss_bce_ema 53.820  Loss_contrast_ema 104.480  mAP_ema 0.00000
+[05/15 01:00:27.473]: 4 | Set best mAP 0 in ep -1
+[05/15 01:00:27.473]:    | best regular mAP 0 in ep -1
+[05/15 01:00:27.541]: lr:1.2667261444402964e-05
+[05/15 01:00:45.417]: Epoch: [5/80][   0/1293]  T 17.874 (17.874)  DT 2.175 (2.175)  S1 1.8 (1.8)  SA 3.6 (3.6)  LR 1.267e-05  Loss 172.727 (172.727)  Loss_bce 48.172 (48.172)  losses_contras_s2s 75.561 (75.561)  losses_contras_p2s 48.994 (48.994)  Mem 15706
+[05/15 01:01:42.165]: Epoch: [5/80][ 100/1293]  T 0.572 (0.739)  DT 0.000 (0.022)  S1 56.0 (43.3)  SA 111.9 (86.6)  LR 1.297e-05  Loss 135.355 (155.658)  Loss_bce 35.687 (36.168)  losses_contras_s2s 45.755 (56.579)  losses_contras_p2s 53.914 (62.910)  Mem 15706
+[05/15 01:02:39.123]: Epoch: [5/80][ 200/1293]  T 0.570 (0.655)  DT 0.000 (0.011)  S1 56.1 (48.9)  SA 112.2 (97.8)  LR 1.328e-05  Loss 209.170 (154.604)  Loss_bce 57.329 (37.065)  losses_contras_s2s 91.746 (55.127)  losses_contras_p2s 60.094 (62.412)  Mem 15706
+[05/15 01:03:35.880]: Epoch: [5/80][ 300/1293]  T 0.562 (0.626)  DT 0.000 (0.007)  S1 57.0 (51.1)  SA 113.9 (102.3)  LR 1.359e-05  Loss 162.898 (154.680)  Loss_bce 39.305 (37.130)  losses_contras_s2s 71.656 (54.666)  losses_contras_p2s 51.936 (62.885)  Mem 15706
+[05/15 01:04:32.622]: Epoch: [5/80][ 400/1293]  T 0.568 (0.611)  DT 0.000 (0.006)  S1 56.3 (52.4)  SA 112.7 (104.7)  LR 1.391e-05  Loss 164.073 (154.137)  Loss_bce 44.528 (37.708)  losses_contras_s2s 65.795 (54.133)  losses_contras_p2s 53.749 (62.296)  Mem 15706
+[05/15 01:05:29.266]: Epoch: [5/80][ 500/1293]  T 0.559 (0.602)  DT 0.000 (0.005)  S1 57.3 (53.1)  SA 114.5 (106.3)  LR 1.422e-05  Loss 165.106 (154.943)  Loss_bce 36.152 (37.759)  losses_contras_s2s 67.974 (54.604)  losses_contras_p2s 60.980 (62.580)  Mem 15706
+[05/15 01:06:30.176]: Epoch: [5/80][ 600/1293]  T 0.570 (0.603)  DT 0.000 (0.004)  S1 56.1 (53.0)  SA 112.2 (106.1)  LR 1.454e-05  Loss 127.902 (154.763)  Loss_bce 39.767 (37.592)  losses_contras_s2s 27.029 (54.394)  losses_contras_p2s 61.106 (62.777)  Mem 15706
+[05/15 01:07:27.440]: Epoch: [5/80][ 700/1293]  T 0.571 (0.599)  DT 0.000 (0.003)  S1 56.0 (53.4)  SA 112.0 (106.8)  LR 1.486e-05  Loss 176.453 (154.226)  Loss_bce 32.004 (37.467)  losses_contras_s2s 76.090 (53.973)  losses_contras_p2s 68.359 (62.786)  Mem 15706
+[05/15 01:08:24.889]: Epoch: [5/80][ 800/1293]  T 0.583 (0.596)  DT 0.000 (0.003)  S1 54.9 (53.7)  SA 109.8 (107.4)  LR 1.519e-05  Loss 174.439 (154.286)  Loss_bce 51.344 (37.573)  losses_contras_s2s 66.671 (53.911)  losses_contras_p2s 56.424 (62.802)  Mem 15706
+[05/15 01:09:23.088]: Epoch: [5/80][ 900/1293]  T 0.572 (0.594)  DT 0.000 (0.003)  S1 55.9 (53.8)  SA 111.8 (107.7)  LR 1.551e-05  Loss 153.459 (154.059)  Loss_bce 41.314 (37.563)  losses_contras_s2s 49.322 (53.666)  losses_contras_p2s 62.822 (62.830)  Mem 15706
+[05/15 01:10:20.149]: Epoch: [5/80][1000/1293]  T 0.567 (0.592)  DT 0.000 (0.002)  S1 56.4 (54.1)  SA 112.9 (108.1)  LR 1.584e-05  Loss 160.261 (154.221)  Loss_bce 27.005 (37.693)  losses_contras_s2s 47.679 (53.645)  losses_contras_p2s 85.577 (62.883)  Mem 15706
+[05/15 01:11:17.065]: Epoch: [5/80][1100/1293]  T 0.564 (0.590)  DT 0.000 (0.002)  S1 56.8 (54.2)  SA 113.5 (108.5)  LR 1.617e-05  Loss 177.997 (154.279)  Loss_bce 28.608 (37.632)  losses_contras_s2s 72.683 (53.646)  losses_contras_p2s 76.706 (63.001)  Mem 15706
+[05/15 01:12:13.859]: Epoch: [5/80][1200/1293]  T 0.566 (0.588)  DT 0.000 (0.002)  S1 56.5 (54.4)  SA 113.0 (108.8)  LR 1.651e-05  Loss 151.055 (154.209)  Loss_bce 29.852 (37.615)  losses_contras_s2s 57.386 (53.585)  losses_contras_p2s 63.817 (63.009)  Mem 15706
+[05/15 01:15:51.001]: => synchronize...
+[05/15 01:18:55.642]: => synchronize...
+[05/15 01:19:16.651]: => Test Epoch: [ 5/80]  ETA 22:45:54  TT 0:18:49 (1:50:44)  Loss 156.075  Loss_bce 38.278  Loss_contras 117.960  mAP 0.00000  Loss_ema 157.289  Loss_bce_ema 47.577  Loss_contrast_ema 109.864  mAP_ema 0.00000
+[05/15 01:19:16.657]: 5 | Set best mAP 0 in ep -1
+[05/15 01:19:16.657]:    | best regular mAP 0 in ep -1
+[05/15 01:19:16.724]: lr:1.68168603673018e-05
+[05/15 01:19:34.413]: Epoch: [6/80][   0/1293]  T 17.687 (17.687)  DT 1.878 (1.878)  S1 1.8 (1.8)  SA 3.6 (3.6)  LR 1.682e-05  Loss 146.302 (146.302)  Loss_bce 37.241 (37.241)  losses_contras_s2s 43.765 (43.765)  losses_contras_p2s 65.297 (65.297)  Mem 15706
+[05/15 01:20:31.305]: Epoch: [6/80][ 100/1293]  T 0.573 (0.738)  DT 0.000 (0.019)  S1 55.8 (43.3)  SA 111.6 (86.7)  LR 1.716e-05  Loss 142.524 (154.636)  Loss_bce 37.306 (37.038)  losses_contras_s2s 41.635 (54.140)  losses_contras_p2s 63.583 (63.458)  Mem 15706
+[05/15 01:21:28.345]: Epoch: [6/80][ 200/1293]  T 0.576 (0.655)  DT 0.000 (0.010)  S1 55.6 (48.9)  SA 111.2 (97.7)  LR 1.750e-05  Loss 159.473 (154.274)  Loss_bce 45.203 (36.962)  losses_contras_s2s 65.061 (54.031)  losses_contras_p2s 49.209 (63.281)  Mem 15706
+[05/15 01:22:25.282]: Epoch: [6/80][ 300/1293]  T 0.573 (0.626)  DT 0.000 (0.006)  S1 55.8 (51.1)  SA 111.7 (102.2)  LR 1.784e-05  Loss 127.382 (153.779)  Loss_bce 32.488 (36.821)  losses_contras_s2s 29.433 (53.388)  losses_contras_p2s 65.461 (63.570)  Mem 15706
+[05/15 01:23:22.338]: Epoch: [6/80][ 400/1293]  T 0.582 (0.612)  DT 0.000 (0.005)  S1 54.9 (52.2)  SA 109.9 (104.5)  LR 1.818e-05  Loss 149.639 (153.720)  Loss_bce 31.066 (36.906)  losses_contras_s2s 49.068 (53.045)  losses_contras_p2s 69.506 (63.770)  Mem 15706
+[05/15 01:24:19.247]: Epoch: [6/80][ 500/1293]  T 0.577 (0.604)  DT 0.000 (0.004)  S1 55.5 (53.0)  SA 110.9 (106.0)  LR 1.853e-05  Loss 160.627 (153.317)  Loss_bce 45.059 (36.954)  losses_contras_s2s 58.881 (52.794)  losses_contras_p2s 56.687 (63.568)  Mem 15706
+[05/15 01:25:16.127]: Epoch: [6/80][ 600/1293]  T 0.572 (0.598)  DT 0.000 (0.003)  S1 56.0 (53.5)  SA 112.0 (107.0)  LR 1.888e-05  Loss 180.035 (153.440)  Loss_bce 37.862 (36.909)  losses_contras_s2s 84.208 (52.969)  losses_contras_p2s 57.965 (63.562)  Mem 15706
+[05/15 01:26:13.263]: Epoch: [6/80][ 700/1293]  T 0.571 (0.594)  DT 0.000 (0.003)  S1 56.0 (53.9)  SA 112.1 (107.7)  LR 1.922e-05  Loss 141.862 (153.251)  Loss_bce 37.800 (36.879)  losses_contras_s2s 51.324 (52.931)  losses_contras_p2s 52.739 (63.441)  Mem 15706
+[05/15 01:27:10.327]: Epoch: [6/80][ 800/1293]  T 0.570 (0.591)  DT 0.000 (0.003)  S1 56.1 (54.1)  SA 112.2 (108.2)  LR 1.958e-05  Loss 132.887 (153.308)  Loss_bce 32.728 (37.008)  losses_contras_s2s 27.170 (52.882)  losses_contras_p2s 72.988 (63.418)  Mem 15706
+[05/15 01:28:07.335]: Epoch: [6/80][ 900/1293]  T 0.572 (0.589)  DT 0.000 (0.002)  S1 55.9 (54.3)  SA 111.9 (108.7)  LR 1.993e-05  Loss 127.125 (153.428)  Loss_bce 34.473 (37.051)  losses_contras_s2s 38.141 (52.923)  losses_contras_p2s 54.511 (63.454)  Mem 15706
+[05/15 01:29:04.329]: Epoch: [6/80][1000/1293]  T 0.569 (0.587)  DT 0.000 (0.002)  S1 56.2 (54.5)  SA 112.4 (109.0)  LR 2.028e-05  Loss 166.171 (153.241)  Loss_bce 48.415 (37.140)  losses_contras_s2s 64.591 (52.752)  losses_contras_p2s 53.165 (63.349)  Mem 15706
+[05/15 01:30:01.267]: Epoch: [6/80][1100/1293]  T 0.567 (0.585)  DT 0.000 (0.002)  S1 56.5 (54.7)  SA 113.0 (109.3)  LR 2.064e-05  Loss 130.886 (153.290)  Loss_bce 32.636 (37.278)  losses_contras_s2s 37.816 (52.741)  losses_contras_p2s 60.434 (63.272)  Mem 15706
+[05/15 01:30:58.160]: Epoch: [6/80][1200/1293]  T 0.570 (0.584)  DT 0.000 (0.002)  S1 56.2 (54.8)  SA 112.3 (109.6)  LR 2.099e-05  Loss 132.188 (153.323)  Loss_bce 36.475 (37.314)  losses_contras_s2s 33.064 (52.803)  losses_contras_p2s 62.649 (63.206)  Mem 15706
+[05/15 01:34:34.849]: => synchronize...
+[05/15 01:37:41.889]: => synchronize...
+[05/15 01:38:03.575]: => Test Epoch: [ 6/80]  ETA 22:30:50  TT 0:18:46 (2:09:31)  Loss 153.392  Loss_bce 38.959  Loss_contras 114.591  mAP 0.00000  Loss_ema 157.122  Loss_bce_ema 44.233  Loss_contrast_ema 113.045  mAP_ema 0.00000
+[05/15 01:38:03.580]: 6 | Set best mAP 0 in ep -1
+[05/15 01:38:03.581]:    | best regular mAP 0 in ep -1
+[05/15 01:38:03.650]: lr:2.1319396205774126e-05
+[05/15 01:38:21.969]: Epoch: [7/80][   0/1293]  T 18.318 (18.318)  DT 2.023 (2.023)  S1 1.7 (1.7)  SA 3.5 (3.5)  LR 2.132e-05  Loss 152.385 (152.385)  Loss_bce 31.595 (31.595)  losses_contras_s2s 40.354 (40.354)  losses_contras_p2s 80.436 (80.436)  Mem 15706
+[05/15 01:39:18.490]: Epoch: [7/80][ 100/1293]  T 0.564 (0.741)  DT 0.000 (0.020)  S1 56.7 (43.2)  SA 113.5 (86.4)  LR 2.168e-05  Loss 157.345 (153.238)  Loss_bce 42.751 (35.898)  losses_contras_s2s 42.295 (53.166)  losses_contras_p2s 72.299 (64.174)  Mem 15706
+[05/15 01:40:15.247]: Epoch: [7/80][ 200/1293]  T 0.569 (0.655)  DT 0.000 (0.010)  S1 56.2 (48.9)  SA 112.4 (97.8)  LR 2.204e-05  Loss 150.352 (151.287)  Loss_bce 48.427 (36.419)  losses_contras_s2s 55.562 (51.258)  losses_contras_p2s 46.363 (63.610)  Mem 15706
+[05/15 01:41:12.039]: Epoch: [7/80][ 300/1293]  T 0.565 (0.626)  DT 0.000 (0.007)  S1 56.6 (51.1)  SA 113.2 (102.3)  LR 2.240e-05  Loss 193.404 (151.261)  Loss_bce 43.264 (36.542)  losses_contras_s2s 88.421 (51.367)  losses_contras_p2s 61.718 (63.351)  Mem 15706
+[05/15 01:42:08.856]: Epoch: [7/80][ 400/1293]  T 0.567 (0.611)  DT 0.000 (0.005)  S1 56.4 (52.3)  SA 112.9 (104.7)  LR 2.276e-05  Loss 134.274 (151.774)  Loss_bce 46.619 (36.770)  losses_contras_s2s 39.618 (51.563)  losses_contras_p2s 48.037 (63.441)  Mem 15706
+[05/15 01:43:05.679]: Epoch: [7/80][ 500/1293]  T 0.569 (0.603)  DT 0.000 (0.004)  S1 56.3 (53.1)  SA 112.5 (106.2)  LR 2.312e-05  Loss 140.924 (152.177)  Loss_bce 40.729 (36.938)  losses_contras_s2s 39.536 (51.666)  losses_contras_p2s 60.660 (63.573)  Mem 15706
+[05/15 01:44:02.432]: Epoch: [7/80][ 600/1293]  T 0.567 (0.597)  DT 0.000 (0.004)  S1 56.4 (53.6)  SA 112.8 (107.2)  LR 2.348e-05  Loss 160.980 (152.581)  Loss_bce 49.019 (37.061)  losses_contras_s2s 39.312 (51.994)  losses_contras_p2s 72.649 (63.526)  Mem 15706
+[05/15 01:44:59.227]: Epoch: [7/80][ 700/1293]  T 0.565 (0.593)  DT 0.000 (0.003)  S1 56.7 (54.0)  SA 113.3 (108.0)  LR 2.385e-05  Loss 156.496 (152.199)  Loss_bce 43.929 (37.279)  losses_contras_s2s 50.412 (51.872)  losses_contras_p2s 62.155 (63.048)  Mem 15706
+[05/15 01:45:56.023]: Epoch: [7/80][ 800/1293]  T 0.567 (0.590)  DT 0.000 (0.003)  S1 56.4 (54.3)  SA 112.9 (108.5)  LR 2.421e-05  Loss 142.179 (152.676)  Loss_bce 32.619 (37.498)  losses_contras_s2s 54.851 (52.064)  losses_contras_p2s 54.709 (63.114)  Mem 15706
+[05/15 01:46:52.800]: Epoch: [7/80][ 900/1293]  T 0.568 (0.587)  DT 0.000 (0.002)  S1 56.4 (54.5)  SA 112.8 (109.0)  LR 2.457e-05  Loss 170.813 (152.576)  Loss_bce 33.206 (37.464)  losses_contras_s2s 57.482 (51.972)  losses_contras_p2s 80.124 (63.139)  Mem 15706
+[05/15 01:47:49.621]: Epoch: [7/80][1000/1293]  T 0.570 (0.585)  DT 0.000 (0.002)  S1 56.2 (54.7)  SA 112.3 (109.3)  LR 2.494e-05  Loss 145.536 (152.707)  Loss_bce 40.466 (37.511)  losses_contras_s2s 50.800 (52.119)  losses_contras_p2s 54.270 (63.077)  Mem 15706
+[05/15 01:48:46.438]: Epoch: [7/80][1100/1293]  T 0.568 (0.584)  DT 0.000 (0.002)  S1 56.3 (54.8)  SA 112.6 (109.6)  LR 2.530e-05  Loss 159.425 (152.780)  Loss_bce 42.802 (37.551)  losses_contras_s2s 55.539 (52.183)  losses_contras_p2s 61.083 (63.046)  Mem 15706
+[05/15 01:49:43.206]: Epoch: [7/80][1200/1293]  T 0.569 (0.582)  DT 0.000 (0.002)  S1 56.2 (54.9)  SA 112.4 (109.9)  LR 2.567e-05  Loss 158.720 (152.875)  Loss_bce 31.920 (37.668)  losses_contras_s2s 58.719 (52.150)  losses_contras_p2s 68.080 (63.058)  Mem 15706
+[05/15 01:53:21.301]: => synchronize...
+[05/15 01:56:33.306]: => synchronize...
+[05/15 01:56:54.413]: => Test Epoch: [ 7/80]  ETA 22:15:24  TT 0:18:50 (2:28:22)  Loss 154.587  Loss_bce 39.400  Loss_contras 115.347  mAP 0.00000  Loss_ema 156.338  Loss_bce_ema 42.468  Loss_contrast_ema 114.028  mAP_ema 0.00000
+[05/15 01:56:54.419]: 7 | Set best mAP 0 in ep -1
+[05/15 01:56:54.420]:    | best regular mAP 0 in ep -1
+[05/15 01:56:54.487]: lr:2.600182235760656e-05
+[05/15 01:57:16.151]: Epoch: [8/80][   0/1293]  T 21.662 (21.662)  DT 2.122 (2.122)  S1 1.5 (1.5)  SA 3.0 (3.0)  LR 2.601e-05  Loss 114.551 (114.551)  Loss_bce 32.312 (32.312)  losses_contras_s2s 37.180 (37.180)  losses_contras_p2s 45.059 (45.059)  Mem 15706
+[05/15 01:58:14.234]: Epoch: [8/80][ 100/1293]  T 0.581 (0.790)  DT 0.000 (0.021)  S1 55.1 (40.5)  SA 110.2 (81.1)  LR 2.637e-05  Loss 136.764 (151.024)  Loss_bce 44.183 (35.490)  losses_contras_s2s 40.668 (49.829)  losses_contras_p2s 51.914 (65.705)  Mem 15706
+[05/15 01:59:12.647]: Epoch: [8/80][ 200/1293]  T 0.597 (0.687)  DT 0.000 (0.011)  S1 53.6 (46.6)  SA 107.3 (93.1)  LR 2.673e-05  Loss 166.917 (152.957)  Loss_bce 37.579 (35.900)  losses_contras_s2s 62.244 (51.680)  losses_contras_p2s 67.095 (65.377)  Mem 15706
+[05/15 02:00:10.046]: Epoch: [8/80][ 300/1293]  T 0.565 (0.650)  DT 0.000 (0.007)  S1 56.6 (49.3)  SA 113.2 (98.5)  LR 2.710e-05  Loss 160.061 (153.251)  Loss_bce 42.998 (36.346)  losses_contras_s2s 38.362 (52.137)  losses_contras_p2s 78.702 (64.768)  Mem 15706
+[05/15 02:01:06.565]: Epoch: [8/80][ 400/1293]  T 0.562 (0.629)  DT 0.000 (0.006)  S1 56.9 (50.9)  SA 113.9 (101.8)  LR 2.746e-05  Loss 166.070 (152.445)  Loss_bce 38.930 (36.887)  losses_contras_s2s 39.621 (51.897)  losses_contras_p2s 87.519 (63.661)  Mem 15706
+[05/15 02:02:03.098]: Epoch: [8/80][ 500/1293]  T 0.564 (0.616)  DT 0.000 (0.005)  S1 56.8 (51.9)  SA 113.5 (103.9)  LR 2.783e-05  Loss 148.399 (152.123)  Loss_bce 50.014 (37.581)  losses_contras_s2s 43.362 (51.382)  losses_contras_p2s 55.023 (63.159)  Mem 15706
+[05/15 02:02:59.597]: Epoch: [8/80][ 600/1293]  T 0.561 (0.607)  DT 0.000 (0.004)  S1 57.0 (52.7)  SA 114.1 (105.4)  LR 2.819e-05  Loss 154.662 (152.426)  Loss_bce 29.728 (37.733)  losses_contras_s2s 54.538 (51.635)  losses_contras_p2s 70.396 (63.058)  Mem 15706
+[05/15 02:03:56.119]: Epoch: [8/80][ 700/1293]  T 0.562 (0.601)  DT 0.000 (0.003)  S1 56.9 (53.2)  SA 113.8 (106.4)  LR 2.855e-05  Loss 139.617 (152.353)  Loss_bce 40.044 (37.689)  losses_contras_s2s 21.610 (51.477)  losses_contras_p2s 77.964 (63.187)  Mem 15706
+[05/15 02:04:52.582]: Epoch: [8/80][ 800/1293]  T 0.563 (0.597)  DT 0.000 (0.003)  S1 56.9 (53.6)  SA 113.8 (107.2)  LR 2.891e-05  Loss 155.786 (152.321)  Loss_bce 39.922 (37.525)  losses_contras_s2s 64.921 (51.231)  losses_contras_p2s 50.944 (63.565)  Mem 15706
+[05/15 02:05:49.132]: Epoch: [8/80][ 900/1293]  T 0.566 (0.593)  DT 0.000 (0.003)  S1 56.6 (53.9)  SA 113.1 (107.9)  LR 2.928e-05  Loss 130.978 (152.090)  Loss_bce 29.035 (37.588)  losses_contras_s2s 49.647 (51.071)  losses_contras_p2s 52.296 (63.431)  Mem 15706
+[05/15 02:06:45.719]: Epoch: [8/80][1000/1293]  T 0.565 (0.591)  DT 0.000 (0.002)  S1 56.7 (54.2)  SA 113.3 (108.4)  LR 2.964e-05  Loss 157.671 (152.147)  Loss_bce 35.073 (37.735)  losses_contras_s2s 54.015 (51.137)  losses_contras_p2s 68.583 (63.275)  Mem 15706
+[05/15 02:07:42.298]: Epoch: [8/80][1100/1293]  T 0.565 (0.588)  DT 0.000 (0.002)  S1 56.6 (54.4)  SA 113.3 (108.8)  LR 3.000e-05  Loss 181.386 (152.519)  Loss_bce 32.502 (37.908)  losses_contras_s2s 72.137 (51.249)  losses_contras_p2s 76.747 (63.361)  Mem 15706
+[05/15 02:08:38.973]: Epoch: [8/80][1200/1293]  T 0.571 (0.587)  DT 0.000 (0.002)  S1 56.0 (54.6)  SA 112.0 (109.1)  LR 3.035e-05  Loss 154.694 (152.816)  Loss_bce 52.079 (38.056)  losses_contras_s2s 42.039 (51.543)  losses_contras_p2s 60.576 (63.217)  Mem 15706
+[05/15 02:12:19.585]: => synchronize...
+[05/15 02:15:29.757]: => synchronize...
+[05/15 02:15:51.814]: => Test Epoch: [ 8/80]  ETA 22:00:05  TT 0:18:57 (2:47:20)  Loss 154.083  Loss_bce 40.683  Loss_contras 113.557  mAP 0.00000  Loss_ema 154.941  Loss_bce_ema 41.578  Loss_contrast_ema 113.520  mAP_ema 0.00000
+[05/15 02:15:51.821]: 8 | Set best mAP 0 in ep -1
+[05/15 02:15:51.821]:    | best regular mAP 0 in ep -1
+[05/15 02:15:51.890]: lr:3.068417847050912e-05
+[05/15 02:16:18.446]: Epoch: [9/80][   0/1293]  T 26.554 (26.554)  DT 2.041 (2.041)  S1 1.2 (1.2)  SA 2.4 (2.4)  LR 3.069e-05  Loss 157.224 (157.224)  Loss_bce 40.694 (40.694)  losses_contras_s2s 47.355 (47.355)  losses_contras_p2s 69.174 (69.174)  Mem 15706
+[05/15 02:17:16.652]: Epoch: [9/80][ 100/1293]  T 0.592 (0.839)  DT 0.000 (0.021)  S1 54.0 (38.1)  SA 108.1 (76.3)  LR 3.104e-05  Loss 168.217 (152.028)  Loss_bce 75.241 (36.832)  losses_contras_s2s 51.967 (51.085)  losses_contras_p2s 41.008 (64.112)  Mem 15706
+[05/15 02:18:14.351]: Epoch: [9/80][ 200/1293]  T 0.593 (0.709)  DT 0.001 (0.011)  S1 54.0 (45.2)  SA 108.0 (90.3)  LR 3.140e-05  Loss 138.896 (153.465)  Loss_bce 45.779 (37.743)  losses_contras_s2s 25.747 (51.695)  losses_contras_p2s 67.369 (64.026)  Mem 15706
+[05/15 02:19:16.957]: Epoch: [9/80][ 300/1293]  T 0.579 (0.681)  DT 0.000 (0.007)  S1 55.3 (47.0)  SA 110.6 (93.9)  LR 3.175e-05  Loss 181.176 (152.746)  Loss_bce 26.512 (37.855)  losses_contras_s2s 71.994 (51.340)  losses_contras_p2s 82.670 (63.550)  Mem 15706
+[05/15 02:20:14.915]: Epoch: [9/80][ 400/1293]  T 0.578 (0.656)  DT 0.000 (0.005)  S1 55.4 (48.8)  SA 110.8 (97.6)  LR 3.211e-05  Loss 125.027 (152.242)  Loss_bce 31.139 (37.665)  losses_contras_s2s 52.831 (51.031)  losses_contras_p2s 41.058 (63.546)  Mem 15706
+[05/15 02:21:12.570]: Epoch: [9/80][ 500/1293]  T 0.578 (0.640)  DT 0.000 (0.004)  S1 55.4 (50.0)  SA 110.7 (100.0)  LR 3.246e-05  Loss 134.121 (152.705)  Loss_bce 35.817 (37.747)  losses_contras_s2s 28.574 (51.035)  losses_contras_p2s 69.730 (63.923)  Mem 15706
+[05/15 02:22:10.420]: Epoch: [9/80][ 600/1293]  T 0.574 (0.630)  DT 0.000 (0.004)  S1 55.8 (50.8)  SA 111.6 (101.6)  LR 3.281e-05  Loss 154.046 (152.990)  Loss_bce 34.676 (37.872)  losses_contras_s2s 52.188 (51.345)  losses_contras_p2s 67.182 (63.773)  Mem 15706
+[05/15 02:23:08.151]: Epoch: [9/80][ 700/1293]  T 0.582 (0.622)  DT 0.000 (0.003)  S1 55.0 (51.4)  SA 109.9 (102.8)  LR 3.316e-05  Loss 157.104 (153.197)  Loss_bce 50.741 (38.082)  losses_contras_s2s 50.950 (51.455)  losses_contras_p2s 55.413 (63.661)  Mem 15706
+[05/15 02:24:05.804]: Epoch: [9/80][ 800/1293]  T 0.569 (0.617)  DT 0.000 (0.003)  S1 56.2 (51.9)  SA 112.4 (103.8)  LR 3.351e-05  Loss 183.942 (152.856)  Loss_bce 33.666 (38.091)  losses_contras_s2s 54.651 (51.298)  losses_contras_p2s 95.625 (63.467)  Mem 15706
+[05/15 02:25:03.151]: Epoch: [9/80][ 900/1293]  T 0.571 (0.612)  DT 0.000 (0.003)  S1 56.1 (52.3)  SA 112.1 (104.6)  LR 3.385e-05  Loss 162.364 (153.005)  Loss_bce 45.670 (38.225)  losses_contras_s2s 52.537 (51.365)  losses_contras_p2s 64.157 (63.416)  Mem 15706
+[05/15 02:26:00.413]: Epoch: [9/80][1000/1293]  T 0.573 (0.608)  DT 0.000 (0.002)  S1 55.9 (52.6)  SA 111.8 (105.3)  LR 3.419e-05  Loss 144.996 (152.986)  Loss_bce 46.910 (38.376)  losses_contras_s2s 54.536 (51.351)  losses_contras_p2s 43.551 (63.259)  Mem 15706
+[05/15 02:26:57.872]: Epoch: [9/80][1100/1293]  T 0.570 (0.605)  DT 0.000 (0.002)  S1 56.2 (52.9)  SA 112.4 (105.8)  LR 3.454e-05  Loss 117.318 (153.316)  Loss_bce 42.038 (38.566)  losses_contras_s2s 22.631 (51.440)  losses_contras_p2s 52.649 (63.311)  Mem 15706
+[05/15 02:27:55.131]: Epoch: [9/80][1200/1293]  T 0.569 (0.602)  DT 0.000 (0.002)  S1 56.2 (53.1)  SA 112.5 (106.3)  LR 3.488e-05  Loss 138.024 (153.222)  Loss_bce 33.218 (38.641)  losses_contras_s2s 36.879 (51.326)  losses_contras_p2s 67.926 (63.255)  Mem 15706
+[05/15 02:31:39.874]: => synchronize...
+[05/15 02:34:51.747]: => synchronize...
+[05/15 02:35:13.104]: => Test Epoch: [ 9/80]  ETA 21:46:50  TT 0:19:21 (3:06:41)  Loss 154.360  Loss_bce 40.677  Loss_contras 113.840  mAP 0.00000  Loss_ema 153.316  Loss_bce_ema 41.235  Loss_contrast_ema 112.236  mAP_ema 0.00000
+[05/15 02:35:13.110]: 9 | Set best mAP 0 in ep -1
+[05/15 02:35:13.110]:    | best regular mAP 0 in ep -1
+[05/15 02:35:13.178]: lr:3.518650688400802e-05
+[05/15 02:35:39.162]: Epoch: [10/80][   0/1293]  T 25.982 (25.982)  DT 1.844 (1.844)  S1 1.2 (1.2)  SA 2.5 (2.5)  LR 3.519e-05  Loss 130.964 (130.964)  Loss_bce 35.437 (35.437)  losses_contras_s2s 40.425 (40.425)  losses_contras_p2s 55.101 (55.101)  Mem 15706
+[05/15 02:36:36.560]: Epoch: [10/80][ 100/1293]  T 0.576 (0.826)  DT 0.000 (0.019)  S1 55.6 (38.8)  SA 111.2 (77.5)  LR 3.553e-05  Loss 153.512 (150.170)  Loss_bce 37.288 (37.041)  losses_contras_s2s 51.487 (51.227)  losses_contras_p2s 64.737 (61.902)  Mem 15706
+[05/15 02:37:34.032]: Epoch: [10/80][ 200/1293]  T 0.578 (0.701)  DT 0.000 (0.009)  S1 55.3 (45.7)  SA 110.7 (91.3)  LR 3.586e-05  Loss 134.440 (149.626)  Loss_bce 49.938 (37.220)  losses_contras_s2s 32.843 (49.707)  losses_contras_p2s 51.659 (62.699)  Mem 15706
+[05/15 02:38:31.507]: Epoch: [10/80][ 300/1293]  T 0.577 (0.659)  DT 0.000 (0.006)  S1 55.5 (48.6)  SA 111.0 (97.1)  LR 3.619e-05  Loss 157.398 (150.608)  Loss_bce 42.787 (37.461)  losses_contras_s2s 62.119 (50.189)  losses_contras_p2s 52.492 (62.958)  Mem 15706
+[05/15 02:39:28.796]: Epoch: [10/80][ 400/1293]  T 0.576 (0.637)  DT 0.000 (0.005)  S1 55.5 (50.2)  SA 111.1 (100.4)  LR 3.652e-05  Loss 144.129 (150.925)  Loss_bce 36.164 (38.165)  losses_contras_s2s 59.470 (49.775)  losses_contras_p2s 48.495 (62.984)  Mem 15706
+[05/15 02:40:26.030]: Epoch: [10/80][ 500/1293]  T 0.574 (0.624)  DT 0.000 (0.004)  S1 55.8 (51.2)  SA 111.5 (102.5)  LR 3.685e-05  Loss 145.582 (151.310)  Loss_bce 37.799 (38.212)  losses_contras_s2s 61.180 (50.278)  losses_contras_p2s 46.604 (62.820)  Mem 15706
+[05/15 02:41:23.252]: Epoch: [10/80][ 600/1293]  T 0.576 (0.616)  DT 0.000 (0.003)  S1 55.5 (52.0)  SA 111.0 (103.9)  LR 3.717e-05  Loss 156.394 (152.218)  Loss_bce 49.500 (38.210)  losses_contras_s2s 51.998 (50.539)  losses_contras_p2s 54.897 (63.469)  Mem 15706
+[05/15 02:42:20.642]: Epoch: [10/80][ 700/1293]  T 0.575 (0.610)  DT 0.000 (0.003)  S1 55.7 (52.5)  SA 111.3 (105.0)  LR 3.749e-05  Loss 142.399 (152.349)  Loss_bce 45.107 (38.216)  losses_contras_s2s 37.246 (50.734)  losses_contras_p2s 60.047 (63.400)  Mem 15706
+[05/15 02:43:17.932]: Epoch: [10/80][ 800/1293]  T 0.579 (0.605)  DT 0.000 (0.003)  S1 55.2 (52.9)  SA 110.5 (105.8)  LR 3.781e-05  Loss 157.610 (152.126)  Loss_bce 46.447 (38.218)  losses_contras_s2s 52.440 (50.742)  losses_contras_p2s 58.723 (63.167)  Mem 15706
+[05/15 02:44:15.212]: Epoch: [10/80][ 900/1293]  T 0.578 (0.602)  DT 0.000 (0.002)  S1 55.4 (53.2)  SA 110.8 (106.4)  LR 3.812e-05  Loss 178.435 (152.354)  Loss_bce 33.213 (38.472)  losses_contras_s2s 62.722 (50.892)  losses_contras_p2s 82.500 (62.991)  Mem 15706
+[05/15 02:45:12.481]: Epoch: [10/80][1000/1293]  T 0.575 (0.599)  DT 0.000 (0.002)  S1 55.6 (53.4)  SA 111.3 (106.9)  LR 3.844e-05  Loss 182.748 (152.504)  Loss_bce 51.444 (38.624)  losses_contras_s2s 59.713 (50.854)  losses_contras_p2s 71.592 (63.026)  Mem 15706
+[05/15 02:46:09.658]: Epoch: [10/80][1100/1293]  T 0.575 (0.596)  DT 0.000 (0.002)  S1 55.6 (53.7)  SA 111.3 (107.3)  LR 3.875e-05  Loss 168.560 (152.561)  Loss_bce 31.687 (38.720)  losses_contras_s2s 36.536 (50.834)  losses_contras_p2s 100.336 (63.007)  Mem 15706
+[05/15 02:47:06.847]: Epoch: [10/80][1200/1293]  T 0.575 (0.594)  DT 0.000 (0.002)  S1 55.7 (53.9)  SA 111.4 (107.7)  LR 3.906e-05  Loss 146.376 (152.682)  Loss_bce 40.156 (38.732)  losses_contras_s2s 38.881 (50.970)  losses_contras_p2s 67.338 (62.979)  Mem 15706
+[05/15 02:50:49.692]: => synchronize...
+[05/15 02:54:01.314]: => synchronize...
+[05/15 02:54:22.710]: => Test Epoch: [10/80]  ETA 21:31:14  TT 0:19:09 (3:25:51)  Loss 157.235  Loss_bce 41.622  Loss_contras 115.773  mAP 0.00000  Loss_ema 151.742  Loss_bce_ema 41.154  Loss_contrast_ema 110.741  mAP_ema 0.00000
+[05/15 02:54:22.715]: 10 | Set best mAP 0 in ep -1
+[05/15 02:54:22.715]:    | best regular mAP 0 in ep -1
+[05/15 02:54:22.784]: lr:3.9335768967883464e-05
+[05/15 02:54:49.009]: Epoch: [11/80][   0/1293]  T 26.224 (26.224)  DT 1.799 (1.799)  S1 1.2 (1.2)  SA 2.4 (2.4)  LR 3.934e-05  Loss 135.008 (135.008)  Loss_bce 40.570 (40.570)  losses_contras_s2s 32.590 (32.590)  losses_contras_p2s 61.848 (61.848)  Mem 15706
+[05/15 02:55:46.564]: Epoch: [11/80][ 100/1293]  T 0.571 (0.829)  DT 0.000 (0.018)  S1 56.0 (38.6)  SA 112.0 (77.2)  LR 3.964e-05  Loss 167.767 (151.517)  Loss_bce 49.012 (38.422)  losses_contras_s2s 60.666 (52.031)  losses_contras_p2s 58.088 (61.064)  Mem 15706
+[05/15 02:56:44.008]: Epoch: [11/80][ 200/1293]  T 0.576 (0.703)  DT 0.000 (0.009)  S1 55.5 (45.5)  SA 111.0 (91.1)  LR 3.994e-05  Loss 153.876 (151.189)  Loss_bce 42.467 (37.564)  losses_contras_s2s 53.633 (50.452)  losses_contras_p2s 57.776 (63.174)  Mem 15706
+[05/15 02:57:41.512]: Epoch: [11/80][ 300/1293]  T 0.576 (0.660)  DT 0.000 (0.006)  S1 55.5 (48.5)  SA 111.1 (96.9)  LR 4.023e-05  Loss 183.337 (151.412)  Loss_bce 31.517 (37.860)  losses_contras_s2s 70.241 (50.611)  losses_contras_p2s 81.579 (62.941)  Mem 15706
+[05/15 02:58:38.900]: Epoch: [11/80][ 400/1293]  T 0.575 (0.639)  DT 0.000 (0.005)  S1 55.7 (50.1)  SA 111.3 (100.2)  LR 4.053e-05  Loss 170.559 (151.873)  Loss_bce 51.320 (37.859)  losses_contras_s2s 51.263 (50.579)  losses_contras_p2s 67.976 (63.434)  Mem 15706
+[05/15 02:59:36.233]: Epoch: [11/80][ 500/1293]  T 0.572 (0.626)  DT 0.000 (0.004)  S1 55.9 (51.1)  SA 111.9 (102.3)  LR 4.081e-05  Loss 119.531 (152.258)  Loss_bce 33.652 (38.171)  losses_contras_s2s 39.371 (50.704)  losses_contras_p2s 46.508 (63.384)  Mem 15706
+[05/15 03:00:33.578]: Epoch: [11/80][ 600/1293]  T 0.572 (0.617)  DT 0.000 (0.003)  S1 55.9 (51.9)  SA 111.9 (103.7)  LR 4.110e-05  Loss 143.404 (151.940)  Loss_bce 48.270 (38.335)  losses_contras_s2s 52.878 (50.643)  losses_contras_p2s 42.256 (62.962)  Mem 15706
+[05/15 03:01:30.902]: Epoch: [11/80][ 700/1293]  T 0.568 (0.611)  DT 0.000 (0.003)  S1 56.3 (52.4)  SA 112.7 (104.8)  LR 4.138e-05  Loss 124.352 (151.751)  Loss_bce 43.162 (38.610)  losses_contras_s2s 31.292 (50.460)  losses_contras_p2s 49.898 (62.681)  Mem 15706
+[05/15 03:02:28.180]: Epoch: [11/80][ 800/1293]  T 0.572 (0.606)  DT 0.000 (0.002)  S1 55.9 (52.8)  SA 111.9 (105.6)  LR 4.166e-05  Loss 160.772 (151.863)  Loss_bce 29.588 (38.753)  losses_contras_s2s 59.590 (50.235)  losses_contras_p2s 71.594 (62.875)  Mem 15706
+[05/15 03:03:25.494]: Epoch: [11/80][ 900/1293]  T 0.576 (0.602)  DT 0.000 (0.002)  S1 55.6 (53.1)  SA 111.2 (106.3)  LR 4.193e-05  Loss 162.798 (151.863)  Loss_bce 25.424 (38.747)  losses_contras_s2s 49.724 (50.213)  losses_contras_p2s 87.650 (62.903)  Mem 15706
+[05/15 03:04:22.862]: Epoch: [11/80][1000/1293]  T 0.570 (0.599)  DT 0.000 (0.002)  S1 56.1 (53.4)  SA 112.2 (106.8)  LR 4.220e-05  Loss 146.915 (151.895)  Loss_bce 36.327 (38.792)  losses_contras_s2s 39.606 (50.233)  losses_contras_p2s 70.983 (62.869)  Mem 15706
+[05/15 03:05:20.130]: Epoch: [11/80][1100/1293]  T 0.570 (0.597)  DT 0.000 (0.002)  S1 56.1 (53.6)  SA 112.3 (107.2)  LR 4.247e-05  Loss 182.305 (152.349)  Loss_bce 44.236 (38.920)  losses_contras_s2s 60.745 (50.406)  losses_contras_p2s 77.324 (63.023)  Mem 15706
+[05/15 03:06:17.424]: Epoch: [11/80][1200/1293]  T 0.572 (0.595)  DT 0.000 (0.002)  S1 56.0 (53.8)  SA 111.9 (107.6)  LR 4.273e-05  Loss 184.371 (152.539)  Loss_bce 52.130 (39.041)  losses_contras_s2s 64.334 (50.411)  losses_contras_p2s 67.907 (63.086)  Mem 15706
+[05/15 03:10:00.457]: => synchronize...
+[05/15 03:13:12.938]: => synchronize...
+[05/15 03:13:33.829]: => Test Epoch: [11/80]  ETA 21:15:12  TT 0:19:11 (3:45:02)  Loss 156.692  Loss_bce 41.725  Loss_contras 115.126  mAP 0.00000  Loss_ema 150.432  Loss_bce_ema 41.223  Loss_contrast_ema 109.360  mAP_ema 0.00000
+[05/15 03:13:33.834]: 11 | Set best mAP 0 in ep -1
+[05/15 03:13:33.834]:    | best regular mAP 0 in ep -1
+[05/15 03:13:33.902]: lr:4.297249554053062e-05
+[05/15 03:13:53.021]: Epoch: [12/80][   0/1293]  T 19.117 (19.117)  DT 2.113 (2.113)  S1 1.7 (1.7)  SA 3.3 (3.3)  LR 4.298e-05  Loss 135.879 (135.879)  Loss_bce 39.152 (39.152)  losses_contras_s2s 47.799 (47.799)  losses_contras_p2s 48.928 (48.928)  Mem 15706
+[05/15 03:14:50.583]: Epoch: [12/80][ 100/1293]  T 0.576 (0.759)  DT 0.000 (0.021)  S1 55.6 (42.1)  SA 111.1 (84.3)  LR 4.323e-05  Loss 157.429 (152.187)  Loss_bce 33.622 (38.548)  losses_contras_s2s 48.831 (51.928)  losses_contras_p2s 74.976 (61.712)  Mem 15706
+[05/15 03:15:48.036]: Epoch: [12/80][ 200/1293]  T 0.576 (0.667)  DT 0.000 (0.011)  S1 55.6 (48.0)  SA 111.2 (95.9)  LR 4.348e-05  Loss 131.692 (153.052)  Loss_bce 27.735 (38.336)  losses_contras_s2s 51.689 (52.286)  losses_contras_p2s 52.268 (62.430)  Mem 15706
+[05/15 03:16:45.814]: Epoch: [12/80][ 300/1293]  T 0.593 (0.638)  DT 0.000 (0.007)  S1 53.9 (50.2)  SA 107.8 (100.4)  LR 4.373e-05  Loss 171.931 (152.666)  Loss_bce 46.957 (38.128)  losses_contras_s2s 57.656 (52.081)  losses_contras_p2s 67.319 (62.456)  Mem 15706
+[05/15 03:17:43.213]: Epoch: [12/80][ 400/1293]  T 0.571 (0.622)  DT 0.000 (0.006)  S1 56.0 (51.5)  SA 112.0 (102.9)  LR 4.397e-05  Loss 146.381 (151.801)  Loss_bce 37.126 (38.190)  losses_contras_s2s 57.856 (50.943)  losses_contras_p2s 51.400 (62.668)  Mem 15706
+[05/15 03:18:40.454]: Epoch: [12/80][ 500/1293]  T 0.577 (0.612)  DT 0.000 (0.004)  S1 55.5 (52.3)  SA 111.0 (104.6)  LR 4.421e-05  Loss 167.916 (152.414)  Loss_bce 56.458 (38.594)  losses_contras_s2s 53.290 (51.010)  losses_contras_p2s 58.168 (62.811)  Mem 15706
+[05/15 03:19:37.639]: Epoch: [12/80][ 600/1293]  T 0.569 (0.605)  DT 0.000 (0.004)  S1 56.3 (52.9)  SA 112.5 (105.7)  LR 4.445e-05  Loss 180.626 (152.614)  Loss_bce 27.051 (38.635)  losses_contras_s2s 53.963 (50.892)  losses_contras_p2s 99.612 (63.086)  Mem 15706
+[05/15 03:20:35.006]: Epoch: [12/80][ 700/1293]  T 0.577 (0.601)  DT 0.000 (0.003)  S1 55.4 (53.3)  SA 110.9 (106.5)  LR 4.468e-05  Loss 141.837 (152.636)  Loss_bce 33.751 (38.814)  losses_contras_s2s 48.837 (50.909)  losses_contras_p2s 59.248 (62.913)  Mem 15706
+[05/15 03:21:32.243]: Epoch: [12/80][ 800/1293]  T 0.571 (0.597)  DT 0.000 (0.003)  S1 56.1 (53.6)  SA 112.1 (107.2)  LR 4.491e-05  Loss 164.978 (152.602)  Loss_bce 43.863 (39.012)  losses_contras_s2s 66.271 (50.784)  losses_contras_p2s 54.844 (62.806)  Mem 15706
+[05/15 03:22:29.615]: Epoch: [12/80][ 900/1293]  T 0.577 (0.595)  DT 0.000 (0.003)  S1 55.4 (53.8)  SA 110.8 (107.6)  LR 4.513e-05  Loss 155.930 (152.436)  Loss_bce 61.884 (39.106)  losses_contras_s2s 42.542 (50.470)  losses_contras_p2s 51.504 (62.860)  Mem 15706
+[05/15 03:23:26.886]: Epoch: [12/80][1000/1293]  T 0.571 (0.592)  DT 0.000 (0.002)  S1 56.0 (54.0)  SA 112.1 (108.0)  LR 4.535e-05  Loss 164.177 (152.576)  Loss_bce 55.611 (39.312)  losses_contras_s2s 46.059 (50.425)  losses_contras_p2s 62.506 (62.840)  Mem 15706
+[05/15 03:24:24.140]: Epoch: [12/80][1100/1293]  T 0.576 (0.591)  DT 0.000 (0.002)  S1 55.6 (54.2)  SA 111.1 (108.4)  LR 4.556e-05  Loss 158.986 (152.647)  Loss_bce 36.493 (39.268)  losses_contras_s2s 50.873 (50.503)  losses_contras_p2s 71.619 (62.875)  Mem 15706
+[05/15 03:25:24.106]: Epoch: [12/80][1200/1293]  T 0.570 (0.591)  DT 0.000 (0.002)  S1 56.2 (54.1)  SA 112.3 (108.2)  LR 4.577e-05  Loss 172.349 (152.805)  Loss_bce 51.468 (39.466)  losses_contras_s2s 69.164 (50.476)  losses_contras_p2s 51.717 (62.863)  Mem 15706
+[05/15 03:29:08.332]: => synchronize...
+[05/15 03:32:19.905]: => synchronize...
+[05/15 03:32:41.036]: => Test Epoch: [12/80]  ETA 20:58:20  TT 0:19:07 (4:04:09)  Loss 153.551  Loss_bce 41.736  Loss_contras 111.970  mAP 0.00000  Loss_ema 149.520  Loss_bce_ema 41.317  Loss_contrast_ema 108.353  mAP_ema 0.00000
+[05/15 03:32:41.041]: 12 | Set best mAP 0 in ep -1
+[05/15 03:32:41.042]:    | best regular mAP 0 in ep -1
+[05/15 03:32:41.111]: lr:4.595691577076623e-05
+[05/15 03:32:43.979]: Epoch: [13/80][   0/1293]  T 2.866 (2.866)  DT 2.161 (2.161)  S1 11.2 (11.2)  SA 22.3 (22.3)  LR 4.596e-05  Loss 127.766 (127.766)  Loss_bce 30.538 (30.538)  losses_contras_s2s 42.746 (42.746)  losses_contras_p2s 54.483 (54.483)  Mem 15706
+[05/15 03:33:41.499]: Epoch: [13/80][ 100/1293]  T 0.576 (0.598)  DT 0.000 (0.022)  S1 55.6 (53.5)  SA 111.1 (107.0)  LR 4.616e-05  Loss 151.876 (151.893)  Loss_bce 44.597 (38.890)  losses_contras_s2s 40.338 (49.587)  losses_contras_p2s 66.941 (63.416)  Mem 15706
+[05/15 03:34:38.948]: Epoch: [13/80][ 200/1293]  T 0.575 (0.586)  DT 0.000 (0.011)  S1 55.6 (54.6)  SA 111.3 (109.2)  LR 4.635e-05  Loss 175.859 (151.624)  Loss_bce 41.233 (38.991)  losses_contras_s2s 70.151 (50.196)  losses_contras_p2s 64.475 (62.438)  Mem 15706
+[05/15 03:35:36.249]: Epoch: [13/80][ 300/1293]  T 0.575 (0.582)  DT 0.000 (0.007)  S1 55.7 (55.0)  SA 111.4 (110.0)  LR 4.655e-05  Loss 132.366 (151.758)  Loss_bce 43.803 (39.052)  losses_contras_s2s 44.303 (49.234)  losses_contras_p2s 44.260 (63.472)  Mem 15706
+[05/15 03:36:33.357]: Epoch: [13/80][ 400/1293]  T 0.565 (0.579)  DT 0.000 (0.006)  S1 56.7 (55.3)  SA 113.4 (110.5)  LR 4.673e-05  Loss 127.231 (151.606)  Loss_bce 34.746 (39.035)  losses_contras_s2s 27.115 (49.333)  losses_contras_p2s 65.370 (63.239)  Mem 15706
+[05/15 03:37:33.457]: Epoch: [13/80][ 500/1293]  T 0.572 (0.584)  DT 0.000 (0.005)  S1 55.9 (54.8)  SA 111.9 (109.7)  LR 4.691e-05  Loss 155.483 (151.518)  Loss_bce 20.242 (39.074)  losses_contras_s2s 57.458 (49.234)  losses_contras_p2s 77.783 (63.210)  Mem 15706
+[05/15 03:38:30.437]: Epoch: [13/80][ 600/1293]  T 0.574 (0.581)  DT 0.000 (0.004)  S1 55.7 (55.1)  SA 111.5 (110.1)  LR 4.709e-05  Loss 172.771 (151.720)  Loss_bce 51.626 (39.215)  losses_contras_s2s 52.735 (49.232)  losses_contras_p2s 68.410 (63.274)  Mem 15706
+[05/15 03:39:27.788]: Epoch: [13/80][ 700/1293]  T 0.576 (0.580)  DT 0.000 (0.003)  S1 55.6 (55.2)  SA 111.2 (110.3)  LR 4.726e-05  Loss 202.951 (152.136)  Loss_bce 33.280 (39.404)  losses_contras_s2s 84.738 (49.377)  losses_contras_p2s 84.932 (63.355)  Mem 15706
+[05/15 03:40:24.862]: Epoch: [13/80][ 800/1293]  T 0.583 (0.579)  DT 0.000 (0.003)  S1 54.9 (55.3)  SA 109.9 (110.5)  LR 4.743e-05  Loss 137.685 (152.155)  Loss_bce 46.100 (39.293)  losses_contras_s2s 41.088 (49.680)  losses_contras_p2s 50.497 (63.182)  Mem 15706
+[05/15 03:41:22.313]: Epoch: [13/80][ 900/1293]  T 0.574 (0.578)  DT 0.000 (0.003)  S1 55.8 (55.3)  SA 111.6 (110.6)  LR 4.759e-05  Loss 167.759 (152.723)  Loss_bce 42.272 (39.402)  losses_contras_s2s 63.999 (49.953)  losses_contras_p2s 61.487 (63.368)  Mem 15706
+[05/15 03:42:19.582]: Epoch: [13/80][1000/1293]  T 0.585 (0.578)  DT 0.000 (0.002)  S1 54.7 (55.4)  SA 109.3 (110.7)  LR 4.775e-05  Loss 153.684 (153.038)  Loss_bce 30.175 (39.459)  losses_contras_s2s 53.254 (50.029)  losses_contras_p2s 70.255 (63.549)  Mem 15706
+[05/15 03:43:17.961]: Epoch: [13/80][1100/1293]  T 0.575 (0.578)  DT 0.000 (0.002)  S1 55.6 (55.3)  SA 111.3 (110.6)  LR 4.790e-05  Loss 131.287 (153.029)  Loss_bce 22.140 (39.548)  losses_contras_s2s 49.273 (50.198)  losses_contras_p2s 59.874 (63.284)  Mem 15706
+[05/15 03:44:15.058]: Epoch: [13/80][1200/1293]  T 0.580 (0.578)  DT 0.000 (0.002)  S1 55.1 (55.4)  SA 110.3 (110.8)  LR 4.804e-05  Loss 167.324 (153.125)  Loss_bce 46.790 (39.438)  losses_contras_s2s 60.972 (50.324)  losses_contras_p2s 59.562 (63.363)  Mem 15706
+[05/15 03:47:59.002]: => synchronize...
+[05/15 03:51:10.256]: => synchronize...
+[05/15 03:51:31.781]: => Test Epoch: [13/80]  ETA 20:39:52  TT 0:18:50 (4:23:00)  Loss 153.869  Loss_bce 42.335  Loss_contras 111.688  mAP 0.00000  Loss_ema 148.851  Loss_bce_ema 41.361  Loss_contrast_ema 107.638  mAP_ema 0.00000
+[05/15 03:51:31.785]: 13 | Set best mAP 0 in ep -1
+[05/15 03:51:31.785]:    | best regular mAP 0 in ep -1
+[05/15 03:51:31.854]: lr:4.817432901012319e-05
+[05/15 03:51:34.828]: Epoch: [14/80][   0/1293]  T 2.972 (2.972)  DT 1.886 (1.886)  S1 10.8 (10.8)  SA 21.5 (21.5)  LR 4.818e-05  Loss 119.234 (119.234)  Loss_bce 30.035 (30.035)  losses_contras_s2s 31.557 (31.557)  losses_contras_p2s 57.642 (57.642)  Mem 15706
+[05/15 03:52:32.674]: Epoch: [14/80][ 100/1293]  T 0.573 (0.602)  DT 0.000 (0.019)  S1 55.8 (53.1)  SA 111.6 (106.3)  LR 4.831e-05  Loss 161.255 (153.291)  Loss_bce 26.209 (38.377)  losses_contras_s2s 50.382 (51.624)  losses_contras_p2s 84.664 (63.290)  Mem 15706
+[05/15 03:53:30.515]: Epoch: [14/80][ 200/1293]  T 0.571 (0.590)  DT 0.000 (0.010)  S1 56.0 (54.2)  SA 112.1 (108.4)  LR 4.844e-05  Loss 194.399 (151.860)  Loss_bce 38.724 (38.446)  losses_contras_s2s 64.816 (49.966)  losses_contras_p2s 90.860 (63.448)  Mem 15706
+[05/15 03:54:27.811]: Epoch: [14/80][ 300/1293]  T 0.570 (0.585)  DT 0.000 (0.007)  S1 56.1 (54.7)  SA 112.3 (109.5)  LR 4.857e-05  Loss 147.349 (151.208)  Loss_bce 39.813 (38.006)  losses_contras_s2s 49.178 (49.833)  losses_contras_p2s 58.358 (63.369)  Mem 15706
+[05/15 03:55:25.027]: Epoch: [14/80][ 400/1293]  T 0.575 (0.581)  DT 0.000 (0.005)  S1 55.7 (55.0)  SA 111.4 (110.1)  LR 4.869e-05  Loss 136.601 (151.936)  Loss_bce 35.308 (38.164)  losses_contras_s2s 48.542 (50.097)  losses_contras_p2s 52.752 (63.675)  Mem 15706
+[05/15 03:56:22.392]: Epoch: [14/80][ 500/1293]  T 0.570 (0.580)  DT 0.000 (0.004)  S1 56.1 (55.2)  SA 112.3 (110.4)  LR 4.881e-05  Loss 143.540 (151.832)  Loss_bce 45.610 (38.435)  losses_contras_s2s 38.936 (50.408)  losses_contras_p2s 58.994 (62.990)  Mem 15706
+[05/15 03:57:19.512]: Epoch: [14/80][ 600/1293]  T 0.574 (0.578)  DT 0.000 (0.003)  S1 55.8 (55.3)  SA 111.5 (110.6)  LR 4.892e-05  Loss 148.774 (151.831)  Loss_bce 43.149 (38.793)  losses_contras_s2s 60.582 (50.163)  losses_contras_p2s 45.043 (62.875)  Mem 15706
+[05/15 03:58:16.608]: Epoch: [14/80][ 700/1293]  T 0.572 (0.577)  DT 0.000 (0.003)  S1 56.0 (55.4)  SA 111.9 (110.8)  LR 4.902e-05  Loss 137.419 (151.844)  Loss_bce 50.534 (38.779)  losses_contras_s2s 35.976 (50.233)  losses_contras_p2s 50.909 (62.832)  Mem 15706
+[05/15 03:59:13.757]: Epoch: [14/80][ 800/1293]  T 0.570 (0.577)  DT 0.000 (0.003)  S1 56.2 (55.5)  SA 112.4 (111.0)  LR 4.912e-05  Loss 181.141 (152.030)  Loss_bce 43.870 (38.966)  losses_contras_s2s 45.779 (50.281)  losses_contras_p2s 91.492 (62.783)  Mem 15706
+[05/15 04:00:10.839]: Epoch: [14/80][ 900/1293]  T 0.568 (0.576)  DT 0.000 (0.002)  S1 56.4 (55.6)  SA 112.7 (111.1)  LR 4.922e-05  Loss 137.774 (151.890)  Loss_bce 45.373 (39.016)  losses_contras_s2s 40.673 (50.134)  losses_contras_p2s 51.728 (62.740)  Mem 15706
+[05/15 04:01:07.860]: Epoch: [14/80][1000/1293]  T 0.569 (0.575)  DT 0.000 (0.002)  S1 56.3 (55.6)  SA 112.5 (111.2)  LR 4.931e-05  Loss 134.305 (151.913)  Loss_bce 37.309 (39.140)  losses_contras_s2s 33.059 (50.157)  losses_contras_p2s 63.937 (62.616)  Mem 15706
+[05/15 04:02:04.977]: Epoch: [14/80][1100/1293]  T 0.571 (0.575)  DT 0.000 (0.002)  S1 56.0 (55.6)  SA 112.0 (111.3)  LR 4.939e-05  Loss 156.348 (151.855)  Loss_bce 43.546 (39.155)  losses_contras_s2s 61.097 (50.144)  losses_contras_p2s 51.706 (62.556)  Mem 15706
+[05/15 04:03:02.076]: Epoch: [14/80][1200/1293]  T 0.573 (0.575)  DT 0.000 (0.002)  S1 55.8 (55.7)  SA 111.7 (111.4)  LR 4.947e-05  Loss 177.754 (152.043)  Loss_bce 29.113 (39.279)  losses_contras_s2s 40.111 (50.087)  losses_contras_p2s 108.530 (62.677)  Mem 15706
+[05/15 04:06:45.186]: => synchronize...
+[05/15 04:09:57.229]: => synchronize...
+[05/15 04:10:18.613]: => Test Epoch: [14/80]  ETA 20:21:03  TT 0:18:46 (4:41:46)  Loss 155.339  Loss_bce 42.984  Loss_contras 112.511  mAP 0.00000  Loss_ema 148.331  Loss_bce_ema 41.370  Loss_contrast_ema 107.109  mAP_ema 0.00000
+[05/15 04:10:18.619]: 14 | Set best mAP 0 in ep -1
+[05/15 04:10:18.619]:    | best regular mAP 0 in ep -1
+[05/15 04:10:18.689]: lr:4.953951309923632e-05
+[05/15 04:10:21.471]: Epoch: [15/80][   0/1293]  T 2.780 (2.780)  DT 1.978 (1.978)  S1 11.5 (11.5)  SA 23.0 (23.0)  LR 4.954e-05  Loss 144.282 (144.282)  Loss_bce 24.243 (24.243)  losses_contras_s2s 48.981 (48.981)  losses_contras_p2s 71.057 (71.057)  Mem 15706
+[05/15 04:11:18.985]: Epoch: [15/80][ 100/1293]  T 0.573 (0.597)  DT 0.000 (0.020)  S1 55.8 (53.6)  SA 111.7 (107.2)  LR 4.961e-05  Loss 155.081 (149.148)  Loss_bce 37.268 (38.770)  losses_contras_s2s 50.597 (49.251)  losses_contras_p2s 67.217 (61.128)  Mem 15706
+[05/15 04:12:16.456]: Epoch: [15/80][ 200/1293]  T 0.575 (0.586)  DT 0.000 (0.010)  S1 55.7 (54.6)  SA 111.4 (109.2)  LR 4.967e-05  Loss 150.657 (151.458)  Loss_bce 34.337 (38.581)  losses_contras_s2s 56.696 (50.399)  losses_contras_p2s 59.624 (62.477)  Mem 15706
+[05/15 04:13:13.884]: Epoch: [15/80][ 300/1293]  T 0.572 (0.582)  DT 0.000 (0.007)  S1 55.9 (55.0)  SA 111.8 (110.0)  LR 4.973e-05  Loss 139.557 (151.971)  Loss_bce 37.102 (38.822)  losses_contras_s2s 53.172 (50.718)  losses_contras_p2s 49.283 (62.431)  Mem 15706
+[05/15 04:14:11.157]: Epoch: [15/80][ 400/1293]  T 0.575 (0.580)  DT 0.000 (0.005)  S1 55.7 (55.2)  SA 111.3 (110.4)  LR 4.978e-05  Loss 149.873 (151.599)  Loss_bce 40.964 (38.711)  losses_contras_s2s 56.825 (50.340)  losses_contras_p2s 52.085 (62.548)  Mem 15706
+[05/15 04:15:08.294]: Epoch: [15/80][ 500/1293]  T 0.568 (0.578)  DT 0.000 (0.004)  S1 56.3 (55.4)  SA 112.7 (110.7)  LR 4.983e-05  Loss 149.299 (152.430)  Loss_bce 38.268 (38.656)  losses_contras_s2s 41.068 (50.753)  losses_contras_p2s 69.964 (63.021)  Mem 15706
+[05/15 04:16:05.463]: Epoch: [15/80][ 600/1293]  T 0.572 (0.577)  DT 0.000 (0.004)  S1 56.0 (55.5)  SA 112.0 (110.9)  LR 4.987e-05  Loss 147.459 (152.491)  Loss_bce 46.653 (38.822)  losses_contras_s2s 46.325 (50.831)  losses_contras_p2s 54.481 (62.838)  Mem 15706
+[05/15 04:17:02.602]: Epoch: [15/80][ 700/1293]  T 0.567 (0.576)  DT 0.000 (0.003)  S1 56.4 (55.5)  SA 112.9 (111.1)  LR 4.990e-05  Loss 152.874 (152.029)  Loss_bce 28.112 (38.811)  losses_contras_s2s 39.052 (50.533)  losses_contras_p2s 85.711 (62.684)  Mem 15706
+[05/15 04:17:59.748]: Epoch: [15/80][ 800/1293]  T 0.571 (0.576)  DT 0.000 (0.003)  S1 56.1 (55.6)  SA 112.1 (111.2)  LR 4.993e-05  Loss 154.635 (151.716)  Loss_bce 42.241 (38.877)  losses_contras_s2s 52.086 (50.308)  losses_contras_p2s 60.307 (62.531)  Mem 15706
+[05/15 04:18:57.151]: Epoch: [15/80][ 900/1293]  T 0.567 (0.575)  DT 0.000 (0.002)  S1 56.4 (55.6)  SA 112.9 (111.2)  LR 4.996e-05  Loss 155.547 (151.887)  Loss_bce 38.110 (38.886)  losses_contras_s2s 46.263 (50.497)  losses_contras_p2s 71.174 (62.505)  Mem 15706
+[05/15 04:19:54.357]: Epoch: [15/80][1000/1293]  T 0.574 (0.575)  DT 0.000 (0.002)  S1 55.7 (55.6)  SA 111.4 (111.3)  LR 4.998e-05  Loss 175.120 (152.073)  Loss_bce 38.538 (38.813)  losses_contras_s2s 87.263 (50.569)  losses_contras_p2s 49.319 (62.690)  Mem 15706
+[05/15 04:20:51.711]: Epoch: [15/80][1100/1293]  T 0.572 (0.575)  DT 0.000 (0.002)  S1 56.0 (55.7)  SA 111.9 (111.3)  LR 4.999e-05  Loss 168.777 (152.399)  Loss_bce 44.902 (38.866)  losses_contras_s2s 59.755 (50.780)  losses_contras_p2s 64.121 (62.753)  Mem 15706
+[05/15 04:21:48.785]: Epoch: [15/80][1200/1293]  T 0.574 (0.575)  DT 0.000 (0.002)  S1 55.8 (55.7)  SA 111.6 (111.4)  LR 5.000e-05  Loss 152.312 (152.361)  Loss_bce 47.657 (39.034)  losses_contras_s2s 47.830 (50.733)  losses_contras_p2s 56.826 (62.594)  Mem 15706
+[05/15 04:25:31.544]: => synchronize...
+[05/15 04:28:42.296]: => synchronize...
+[05/15 04:29:03.804]: => Test Epoch: [15/80]  ETA 20:02:08  TT 0:18:45 (5:00:32)  Loss 157.971  Loss_bce 43.292  Loss_contras 114.838  mAP 0.00000  Loss_ema 148.068  Loss_bce_ema 41.378  Loss_contrast_ema 106.837  mAP_ema 0.00000
+[05/15 04:29:03.809]: 15 | Set best mAP 0 in ep -1
+[05/15 04:29:03.809]:    | best regular mAP 0 in ep -1
+[05/15 04:29:03.878]: lr:4.999999998198431e-05
+[05/15 04:29:06.754]: Epoch: [16/80][   0/1293]  T 2.874 (2.874)  DT 2.102 (2.102)  S1 11.1 (11.1)  SA 22.3 (22.3)  LR 5.000e-05  Loss 170.768 (170.768)  Loss_bce 35.407 (35.407)  losses_contras_s2s 84.389 (84.389)  losses_contras_p2s 50.971 (50.971)  Mem 15706
+[05/15 04:30:04.154]: Epoch: [16/80][ 100/1293]  T 0.570 (0.597)  DT 0.000 (0.021)  S1 56.1 (53.6)  SA 112.2 (107.2)  LR 5.000e-05  Loss 141.435 (149.804)  Loss_bce 28.331 (37.186)  losses_contras_s2s 27.939 (49.829)  losses_contras_p2s 85.165 (62.790)  Mem 15706
+[05/15 04:31:01.475]: Epoch: [16/80][ 200/1293]  T 0.571 (0.585)  DT 0.000 (0.011)  S1 56.0 (54.7)  SA 112.1 (109.4)  LR 5.000e-05  Loss 158.586 (150.130)  Loss_bce 25.536 (37.263)  losses_contras_s2s 59.818 (49.629)  losses_contras_p2s 73.232 (63.239)  Mem 15706
+[05/15 04:31:58.931]: Epoch: [16/80][ 300/1293]  T 0.566 (0.582)  DT 0.000 (0.007)  S1 56.5 (55.0)  SA 113.1 (110.0)  LR 5.000e-05  Loss 178.670 (150.515)  Loss_bce 30.550 (37.422)  losses_contras_s2s 63.480 (49.866)  losses_contras_p2s 84.639 (63.227)  Mem 15706
+[05/15 04:32:56.147]: Epoch: [16/80][ 400/1293]  T 0.576 (0.579)  DT 0.000 (0.006)  S1 55.5 (55.2)  SA 111.0 (110.5)  LR 5.000e-05  Loss 154.472 (151.289)  Loss_bce 31.360 (37.694)  losses_contras_s2s 68.773 (50.012)  losses_contras_p2s 54.339 (63.582)  Mem 15706
+[05/15 04:33:53.404]: Epoch: [16/80][ 500/1293]  T 0.568 (0.578)  DT 0.000 (0.004)  S1 56.4 (55.4)  SA 112.7 (110.7)  LR 5.000e-05  Loss 135.185 (151.534)  Loss_bce 35.016 (37.991)  losses_contras_s2s 31.307 (50.150)  losses_contras_p2s 68.862 (63.393)  Mem 15706
+[05/15 04:34:50.594]: Epoch: [16/80][ 600/1293]  T 0.576 (0.577)  DT 0.000 (0.004)  S1 55.5 (55.5)  SA 111.0 (110.9)  LR 4.999e-05  Loss 136.925 (151.240)  Loss_bce 35.773 (38.238)  losses_contras_s2s 34.005 (49.649)  losses_contras_p2s 67.147 (63.352)  Mem 15706
+[05/15 04:35:47.769]: Epoch: [16/80][ 700/1293]  T 0.568 (0.576)  DT 0.000 (0.003)  S1 56.3 (55.5)  SA 112.6 (111.1)  LR 4.999e-05  Loss 168.969 (151.670)  Loss_bce 47.851 (38.563)  losses_contras_s2s 56.205 (49.772)  losses_contras_p2s 64.913 (63.336)  Mem 15706
+[05/15 04:36:44.958]: Epoch: [16/80][ 800/1293]  T 0.577 (0.576)  DT 0.000 (0.003)  S1 55.4 (55.6)  SA 110.9 (111.2)  LR 4.999e-05  Loss 140.159 (151.955)  Loss_bce 34.740 (38.615)  losses_contras_s2s 51.882 (50.192)  losses_contras_p2s 53.538 (63.148)  Mem 15706
+[05/15 04:37:42.262]: Epoch: [16/80][ 900/1293]  T 0.566 (0.575)  DT 0.000 (0.003)  S1 56.6 (55.6)  SA 113.2 (111.2)  LR 4.999e-05  Loss 169.812 (152.080)  Loss_bce 42.725 (38.608)  losses_contras_s2s 44.461 (50.197)  losses_contras_p2s 82.626 (63.275)  Mem 15706
+[05/15 04:38:39.345]: Epoch: [16/80][1000/1293]  T 0.573 (0.575)  DT 0.000 (0.002)  S1 55.9 (55.7)  SA 111.8 (111.3)  LR 4.998e-05  Loss 155.455 (152.053)  Loss_bce 36.513 (38.679)  losses_contras_s2s 44.650 (50.205)  losses_contras_p2s 74.292 (63.169)  Mem 15706
+[05/15 04:39:36.392]: Epoch: [16/80][1100/1293]  T 0.571 (0.574)  DT 0.000 (0.002)  S1 56.0 (55.7)  SA 112.1 (111.4)  LR 4.998e-05  Loss 147.192 (152.204)  Loss_bce 50.586 (38.925)  losses_contras_s2s 48.094 (50.203)  losses_contras_p2s 48.512 (63.077)  Mem 15706
+[05/15 04:40:33.454]: Epoch: [16/80][1200/1293]  T 0.573 (0.574)  DT 0.000 (0.002)  S1 55.9 (55.7)  SA 111.7 (111.5)  LR 4.997e-05  Loss 173.842 (152.121)  Loss_bce 56.146 (38.872)  losses_contras_s2s 54.486 (50.231)  losses_contras_p2s 63.211 (63.018)  Mem 15706
+[05/15 04:44:16.256]: => synchronize...
+[05/15 04:47:27.076]: => synchronize...
+[05/15 04:47:48.090]: => Test Epoch: [16/80]  ETA 19:43:11  TT 0:18:44 (5:19:16)  Loss 157.912  Loss_bce 43.939  Loss_contras 114.130  mAP 0.00000  Loss_ema 148.115  Loss_bce_ema 41.314  Loss_contrast_ema 106.949  mAP_ema 0.00000
+[05/15 04:47:48.096]: 16 | Set best mAP 0 in ep -1
+[05/15 04:47:48.096]:    | best regular mAP 0 in ep -1
+[05/15 04:47:48.164]: lr:4.9969839937709644e-05
+[05/15 04:47:51.122]: Epoch: [17/80][   0/1293]  T 2.956 (2.956)  DT 1.925 (1.925)  S1 10.8 (10.8)  SA 21.7 (21.7)  LR 4.997e-05  Loss 145.804 (145.804)  Loss_bce 27.564 (27.564)  losses_contras_s2s 65.870 (65.870)  losses_contras_p2s 52.371 (52.371)  Mem 15706
+[05/15 04:48:48.687]: Epoch: [17/80][ 100/1293]  T 0.577 (0.599)  DT 0.000 (0.019)  S1 55.4 (53.4)  SA 110.9 (106.8)  LR 4.996e-05  Loss 140.550 (151.099)  Loss_bce 48.102 (37.239)  losses_contras_s2s 44.405 (51.898)  losses_contras_p2s 48.043 (61.962)  Mem 15706
+[05/15 04:49:46.172]: Epoch: [17/80][ 200/1293]  T 0.575 (0.587)  DT 0.000 (0.010)  S1 55.7 (54.5)  SA 111.4 (109.0)  LR 4.996e-05  Loss 147.162 (149.593)  Loss_bce 35.372 (36.977)  losses_contras_s2s 57.184 (50.807)  losses_contras_p2s 54.606 (61.808)  Mem 15706
+[05/15 04:50:43.712]: Epoch: [17/80][ 300/1293]  T 0.572 (0.583)  DT 0.000 (0.007)  S1 55.9 (54.9)  SA 111.9 (109.7)  LR 4.995e-05  Loss 170.449 (149.931)  Loss_bce 47.258 (37.324)  losses_contras_s2s 59.778 (50.264)  losses_contras_p2s 63.413 (62.344)  Mem 15706
+[05/15 04:51:40.999]: Epoch: [17/80][ 400/1293]  T 0.567 (0.581)  DT 0.000 (0.005)  S1 56.4 (55.1)  SA 112.8 (110.2)  LR 4.995e-05  Loss 150.662 (151.201)  Loss_bce 32.303 (37.536)  losses_contras_s2s 42.408 (51.039)  losses_contras_p2s 75.951 (62.626)  Mem 15706
+[05/15 04:52:38.215]: Epoch: [17/80][ 500/1293]  T 0.572 (0.579)  DT 0.000 (0.004)  S1 55.9 (55.3)  SA 111.9 (110.5)  LR 4.994e-05  Loss 151.598 (151.547)  Loss_bce 39.673 (37.775)  losses_contras_s2s 59.119 (51.084)  losses_contras_p2s 52.806 (62.687)  Mem 15706
+[05/15 04:53:35.557]: Epoch: [17/80][ 600/1293]  T 0.568 (0.578)  DT 0.000 (0.003)  S1 56.4 (55.4)  SA 112.7 (110.7)  LR 4.994e-05  Loss 147.794 (151.689)  Loss_bce 32.766 (37.888)  losses_contras_s2s 43.466 (51.194)  losses_contras_p2s 71.563 (62.608)  Mem 15706
+[05/15 04:54:32.755]: Epoch: [17/80][ 700/1293]  T 0.571 (0.577)  DT 0.000 (0.003)  S1 56.0 (55.4)  SA 112.0 (110.9)  LR 4.993e-05  Loss 136.063 (151.439)  Loss_bce 35.620 (37.737)  losses_contras_s2s 32.449 (50.968)  losses_contras_p2s 67.994 (62.733)  Mem 15706
+[05/15 04:55:30.015]: Epoch: [17/80][ 800/1293]  T 0.569 (0.577)  DT 0.000 (0.003)  S1 56.2 (55.5)  SA 112.4 (111.0)  LR 4.992e-05  Loss 161.413 (151.258)  Loss_bce 38.106 (37.793)  losses_contras_s2s 40.997 (50.642)  losses_contras_p2s 82.310 (62.823)  Mem 15706
+[05/15 04:56:27.279]: Epoch: [17/80][ 900/1293]  T 0.570 (0.576)  DT 0.000 (0.002)  S1 56.1 (55.5)  SA 112.3 (111.1)  LR 4.991e-05  Loss 130.188 (151.275)  Loss_bce 42.919 (37.951)  losses_contras_s2s 38.964 (50.643)  losses_contras_p2s 48.304 (62.682)  Mem 15706
+[05/15 04:57:24.466]: Epoch: [17/80][1000/1293]  T 0.569 (0.576)  DT 0.000 (0.002)  S1 56.2 (55.6)  SA 112.5 (111.2)  LR 4.991e-05  Loss 153.099 (151.372)  Loss_bce 48.796 (38.111)  losses_contras_s2s 46.657 (50.562)  losses_contras_p2s 57.646 (62.699)  Mem 15706
+[05/15 04:58:21.696]: Epoch: [17/80][1100/1293]  T 0.568 (0.575)  DT 0.000 (0.002)  S1 56.3 (55.6)  SA 112.6 (111.2)  LR 4.990e-05  Loss 133.871 (151.134)  Loss_bce 44.673 (38.171)  losses_contras_s2s 31.269 (50.300)  losses_contras_p2s 57.928 (62.663)  Mem 15706
+[05/15 04:59:19.031]: Epoch: [17/80][1200/1293]  T 0.580 (0.575)  DT 0.000 (0.002)  S1 55.1 (55.6)  SA 110.3 (111.3)  LR 4.989e-05  Loss 149.367 (151.187)  Loss_bce 37.028 (38.197)  losses_contras_s2s 44.915 (50.226)  losses_contras_p2s 67.424 (62.764)  Mem 15706
+[05/15 05:03:09.164]: => synchronize...
+[05/15 05:06:20.673]: => synchronize...
+[05/15 05:06:42.235]: => Test Epoch: [17/80]  ETA 19:24:49  TT 0:18:54 (5:38:10)  Loss 156.044  Loss_bce 42.501  Loss_contras 113.700  mAP 0.00000  Loss_ema 148.204  Loss_bce_ema 41.328  Loss_contrast_ema 107.024  mAP_ema 0.00000
+[05/15 05:06:42.239]: 17 | Set best mAP 0 in ep -1
+[05/15 05:06:42.239]:    | best regular mAP 0 in ep -1
+[05/15 05:06:42.308]: lr:4.987952560283413e-05
+[05/15 05:06:45.286]: Epoch: [18/80][   0/1293]  T 2.977 (2.977)  DT 2.124 (2.124)  S1 10.7 (10.7)  SA 21.5 (21.5)  LR 4.988e-05  Loss 145.368 (145.368)  Loss_bce 38.610 (38.610)  losses_contras_s2s 48.374 (48.374)  losses_contras_p2s 58.384 (58.384)  Mem 15706
+[05/15 05:07:42.845]: Epoch: [18/80][ 100/1293]  T 0.573 (0.599)  DT 0.000 (0.021)  S1 55.8 (53.4)  SA 111.6 (106.8)  LR 4.987e-05  Loss 138.174 (145.934)  Loss_bce 31.188 (36.682)  losses_contras_s2s 45.766 (48.668)  losses_contras_p2s 61.220 (60.583)  Mem 15706
+[05/15 05:08:40.325]: Epoch: [18/80][ 200/1293]  T 0.578 (0.587)  DT 0.000 (0.011)  S1 55.3 (54.5)  SA 110.7 (109.0)  LR 4.986e-05  Loss 155.079 (147.984)  Loss_bce 50.213 (37.016)  losses_contras_s2s 53.122 (49.856)  losses_contras_p2s 51.744 (61.112)  Mem 15706
+[05/15 05:09:37.623]: Epoch: [18/80][ 300/1293]  T 0.568 (0.582)  DT 0.000 (0.007)  S1 56.3 (54.9)  SA 112.6 (109.9)  LR 4.985e-05  Loss 120.097 (148.286)  Loss_bce 23.399 (36.889)  losses_contras_s2s 33.531 (49.911)  losses_contras_p2s 63.168 (61.486)  Mem 15706
+[05/15 05:10:34.941]: Epoch: [18/80][ 400/1293]  T 0.569 (0.580)  DT 0.000 (0.006)  S1 56.2 (55.2)  SA 112.4 (110.3)  LR 4.984e-05  Loss 149.042 (148.389)  Loss_bce 38.611 (36.819)  losses_contras_s2s 38.899 (49.871)  losses_contras_p2s 71.532 (61.699)  Mem 15706
+[05/15 05:11:32.121]: Epoch: [18/80][ 500/1293]  T 0.569 (0.578)  DT 0.000 (0.005)  S1 56.2 (55.3)  SA 112.4 (110.6)  LR 4.983e-05  Loss 131.146 (148.611)  Loss_bce 37.039 (37.180)  losses_contras_s2s 37.246 (49.475)  losses_contras_p2s 56.861 (61.956)  Mem 15706
+[05/15 05:12:29.267]: Epoch: [18/80][ 600/1293]  T 0.569 (0.577)  DT 0.000 (0.004)  S1 56.3 (55.4)  SA 112.6 (110.9)  LR 4.982e-05  Loss 144.835 (149.218)  Loss_bce 50.205 (37.263)  losses_contras_s2s 30.025 (49.767)  losses_contras_p2s 64.606 (62.188)  Mem 15706
+[05/15 05:13:26.440]: Epoch: [18/80][ 700/1293]  T 0.568 (0.576)  DT 0.000 (0.003)  S1 56.4 (55.5)  SA 112.7 (111.0)  LR 4.981e-05  Loss 145.548 (149.180)  Loss_bce 43.358 (37.290)  losses_contras_s2s 48.540 (49.694)  losses_contras_p2s 53.650 (62.195)  Mem 15706
+[05/15 05:14:23.664]: Epoch: [18/80][ 800/1293]  T 0.571 (0.576)  DT 0.000 (0.003)  S1 56.0 (55.6)  SA 112.1 (111.1)  LR 4.979e-05  Loss 158.784 (149.220)  Loss_bce 38.739 (37.411)  losses_contras_s2s 65.498 (49.663)  losses_contras_p2s 54.546 (62.147)  Mem 15706
+[05/15 05:15:20.828]: Epoch: [18/80][ 900/1293]  T 0.570 (0.575)  DT 0.000 (0.003)  S1 56.1 (55.6)  SA 112.3 (111.2)  LR 4.978e-05  Loss 130.684 (149.026)  Loss_bce 32.614 (37.411)  losses_contras_s2s 34.812 (49.323)  losses_contras_p2s 63.258 (62.291)  Mem 15706
+[05/15 05:16:18.051]: Epoch: [18/80][1000/1293]  T 0.571 (0.575)  DT 0.000 (0.002)  S1 56.1 (55.6)  SA 112.1 (111.3)  LR 4.977e-05  Loss 128.514 (149.249)  Loss_bce 20.909 (37.412)  losses_contras_s2s 32.279 (49.415)  losses_contras_p2s 75.325 (62.422)  Mem 15706
+[05/15 05:17:15.326]: Epoch: [18/80][1100/1293]  T 0.575 (0.575)  DT 0.000 (0.002)  S1 55.6 (55.7)  SA 111.3 (111.3)  LR 4.976e-05  Loss 158.522 (149.279)  Loss_bce 45.602 (37.360)  losses_contras_s2s 53.720 (49.407)  losses_contras_p2s 59.201 (62.512)  Mem 15706
+[05/15 05:18:12.508]: Epoch: [18/80][1200/1293]  T 0.572 (0.575)  DT 0.000 (0.002)  S1 56.0 (55.7)  SA 111.9 (111.4)  LR 4.974e-05  Loss 125.371 (149.409)  Loss_bce 38.581 (37.367)  losses_contras_s2s 28.853 (49.536)  losses_contras_p2s 57.937 (62.505)  Mem 15706
+[05/15 05:21:56.013]: => synchronize...
+[05/15 05:25:08.714]: => synchronize...
+[05/15 05:25:30.276]: => Test Epoch: [18/80]  ETA 19:06:05  TT 0:18:48 (5:56:58)  Loss 158.493  Loss_bce 43.468  Loss_contras 115.183  mAP 0.00000  Loss_ema 147.932  Loss_bce_ema 41.379  Loss_contrast_ema 106.700  mAP_ema 0.00000
+[05/15 05:25:30.282]: 18 | Set best mAP 0 in ep -1
+[05/15 05:25:30.282]:    | best regular mAP 0 in ep -1
+[05/15 05:25:30.352]: lr:4.9729274552501086e-05
+[05/15 05:25:33.259]: Epoch: [19/80][   0/1293]  T 2.905 (2.905)  DT 2.037 (2.037)  S1 11.0 (11.0)  SA 22.0 (22.0)  LR 4.973e-05  Loss 182.717 (182.717)  Loss_bce 39.812 (39.812)  losses_contras_s2s 84.011 (84.011)  losses_contras_p2s 58.894 (58.894)  Mem 15706
+[05/15 05:26:30.757]: Epoch: [19/80][ 100/1293]  T 0.568 (0.598)  DT 0.000 (0.020)  S1 56.3 (53.5)  SA 112.7 (107.0)  LR 4.972e-05  Loss 179.946 (150.650)  Loss_bce 24.611 (34.874)  losses_contras_s2s 89.217 (53.011)  losses_contras_p2s 66.118 (62.765)  Mem 15706
+[05/15 05:27:28.212]: Epoch: [19/80][ 200/1293]  T 0.571 (0.586)  DT 0.000 (0.010)  S1 56.0 (54.6)  SA 112.0 (109.1)  LR 4.970e-05  Loss 156.635 (150.359)  Loss_bce 32.764 (35.345)  losses_contras_s2s 65.039 (51.719)  losses_contras_p2s 58.832 (63.294)  Mem 15706
+[05/15 05:28:25.610]: Epoch: [19/80][ 300/1293]  T 0.574 (0.582)  DT 0.000 (0.007)  S1 55.8 (55.0)  SA 111.6 (109.9)  LR 4.969e-05  Loss 134.973 (150.848)  Loss_bce 33.147 (35.565)  losses_contras_s2s 27.553 (51.580)  losses_contras_p2s 74.274 (63.703)  Mem 15706
+[05/15 05:29:22.900]: Epoch: [19/80][ 400/1293]  T 0.572 (0.580)  DT 0.000 (0.005)  S1 55.9 (55.2)  SA 111.9 (110.4)  LR 4.967e-05  Loss 133.941 (150.102)  Loss_bce 37.071 (35.891)  losses_contras_s2s 27.970 (51.102)  losses_contras_p2s 68.899 (63.109)  Mem 15706
+[05/15 05:30:20.037]: Epoch: [19/80][ 500/1293]  T 0.571 (0.578)  DT 0.000 (0.004)  S1 56.1 (55.3)  SA 112.1 (110.7)  LR 4.966e-05  Loss 159.035 (149.620)  Loss_bce 36.803 (35.793)  losses_contras_s2s 65.855 (50.762)  losses_contras_p2s 56.378 (63.065)  Mem 15706
+[05/15 05:31:17.166]: Epoch: [19/80][ 600/1293]  T 0.568 (0.577)  DT 0.000 (0.004)  S1 56.3 (55.5)  SA 112.7 (110.9)  LR 4.964e-05  Loss 142.737 (149.992)  Loss_bce 32.056 (36.067)  losses_contras_s2s 36.001 (50.580)  losses_contras_p2s 74.680 (63.345)  Mem 15706
+[05/15 05:32:14.325]: Epoch: [19/80][ 700/1293]  T 0.570 (0.576)  DT 0.000 (0.003)  S1 56.1 (55.5)  SA 112.2 (111.1)  LR 4.962e-05  Loss 156.018 (150.177)  Loss_bce 34.457 (36.452)  losses_contras_s2s 60.123 (50.316)  losses_contras_p2s 61.438 (63.408)  Mem 15706
+[05/15 05:33:11.438]: Epoch: [19/80][ 800/1293]  T 0.571 (0.576)  DT 0.000 (0.003)  S1 56.0 (55.6)  SA 112.0 (111.2)  LR 4.961e-05  Loss 146.740 (149.956)  Loss_bce 37.909 (36.544)  losses_contras_s2s 50.899 (50.090)  losses_contras_p2s 57.933 (63.322)  Mem 15706
+[05/15 05:34:08.698]: Epoch: [19/80][ 900/1293]  T 0.567 (0.575)  DT 0.000 (0.003)  S1 56.5 (55.6)  SA 112.9 (111.2)  LR 4.959e-05  Loss 141.408 (149.769)  Loss_bce 27.073 (36.655)  losses_contras_s2s 32.329 (49.824)  losses_contras_p2s 82.006 (63.290)  Mem 15706
+[05/15 05:35:05.736]: Epoch: [19/80][1000/1293]  T 0.570 (0.575)  DT 0.000 (0.002)  S1 56.2 (55.7)  SA 112.3 (111.3)  LR 4.957e-05  Loss 141.991 (149.745)  Loss_bce 42.464 (36.857)  losses_contras_s2s 43.525 (49.804)  losses_contras_p2s 56.003 (63.084)  Mem 15706
+[05/15 05:36:02.823]: Epoch: [19/80][1100/1293]  T 0.571 (0.574)  DT 0.000 (0.002)  S1 56.0 (55.7)  SA 112.0 (111.4)  LR 4.955e-05  Loss 164.432 (150.051)  Loss_bce 52.049 (36.947)  losses_contras_s2s 57.686 (49.977)  losses_contras_p2s 54.696 (63.127)  Mem 15706
+[05/15 05:36:59.908]: Epoch: [19/80][1200/1293]  T 0.572 (0.574)  DT 0.000 (0.002)  S1 55.9 (55.7)  SA 111.8 (111.5)  LR 4.954e-05  Loss 150.858 (149.959)  Loss_bce 47.684 (37.094)  losses_contras_s2s 47.318 (49.909)  losses_contras_p2s 55.856 (62.956)  Mem 15706
+[05/15 05:40:44.229]: => synchronize...
+[05/15 05:43:56.264]: => synchronize...
+[05/15 05:44:17.950]: => Test Epoch: [19/80]  ETA 18:47:18  TT 0:18:47 (6:15:46)  Loss 158.426  Loss_bce 43.513  Loss_contras 115.072  mAP 0.00000  Loss_ema 147.726  Loss_bce_ema 41.382  Loss_contrast_ema 106.491  mAP_ema 0.00000
+[05/15 05:44:17.955]: 19 | Set best mAP 0 in ep -1
+[05/15 05:44:17.955]:    | best regular mAP 0 in ep -1
+[05/15 05:44:18.023]: lr:4.951944875465118e-05
+[05/15 05:44:20.960]: Epoch: [20/80][   0/1293]  T 2.935 (2.935)  DT 2.015 (2.015)  S1 10.9 (10.9)  SA 21.8 (21.8)  LR 4.952e-05  Loss 149.898 (149.898)  Loss_bce 35.890 (35.890)  losses_contras_s2s 56.315 (56.315)  losses_contras_p2s 57.693 (57.693)  Mem 15706
+[05/15 05:45:18.486]: Epoch: [20/80][ 100/1293]  T 0.582 (0.599)  DT 0.000 (0.020)  S1 55.0 (53.5)  SA 110.1 (106.9)  LR 4.950e-05  Loss 144.993 (148.391)  Loss_bce 57.917 (36.332)  losses_contras_s2s 49.345 (50.369)  losses_contras_p2s 37.731 (61.689)  Mem 15706
+[05/15 05:46:15.868]: Epoch: [20/80][ 200/1293]  T 0.570 (0.586)  DT 0.000 (0.010)  S1 56.1 (54.6)  SA 112.3 (109.2)  LR 4.948e-05  Loss 163.736 (148.957)  Loss_bce 36.506 (36.600)  losses_contras_s2s 46.008 (50.346)  losses_contras_p2s 81.222 (62.010)  Mem 15706
+[05/15 05:47:13.229]: Epoch: [20/80][ 300/1293]  T 0.577 (0.582)  DT 0.000 (0.007)  S1 55.4 (55.0)  SA 110.9 (110.0)  LR 4.946e-05  Loss 145.735 (148.298)  Loss_bce 27.642 (36.636)  losses_contras_s2s 56.905 (49.935)  losses_contras_p2s 61.187 (61.728)  Mem 15706
+[05/15 05:48:10.695]: Epoch: [20/80][ 400/1293]  T 0.571 (0.580)  DT 0.000 (0.005)  S1 56.0 (55.2)  SA 112.0 (110.3)  LR 4.944e-05  Loss 143.848 (148.557)  Loss_bce 39.676 (36.272)  losses_contras_s2s 41.878 (50.291)  losses_contras_p2s 62.294 (61.994)  Mem 15706
+[05/15 05:49:07.955]: Epoch: [20/80][ 500/1293]  T 0.571 (0.579)  DT 0.000 (0.004)  S1 56.0 (55.3)  SA 112.0 (110.6)  LR 4.942e-05  Loss 179.510 (148.370)  Loss_bce 63.213 (36.436)  losses_contras_s2s 73.311 (50.009)  losses_contras_p2s 42.986 (61.926)  Mem 15706
+[05/15 05:50:05.210]: Epoch: [20/80][ 600/1293]  T 0.570 (0.578)  DT 0.000 (0.004)  S1 56.1 (55.4)  SA 112.3 (110.8)  LR 4.940e-05  Loss 140.568 (148.641)  Loss_bce 26.501 (36.215)  losses_contras_s2s 31.485 (50.064)  losses_contras_p2s 82.582 (62.362)  Mem 15706
+[05/15 05:51:02.497]: Epoch: [20/80][ 700/1293]  T 0.573 (0.577)  DT 0.000 (0.003)  S1 55.9 (55.5)  SA 111.8 (110.9)  LR 4.938e-05  Loss 148.658 (148.508)  Loss_bce 35.699 (36.323)  losses_contras_s2s 63.310 (49.807)  losses_contras_p2s 49.649 (62.378)  Mem 15706
+[05/15 05:51:59.694]: Epoch: [20/80][ 800/1293]  T 0.567 (0.576)  DT 0.000 (0.003)  S1 56.4 (55.5)  SA 112.8 (111.0)  LR 4.936e-05  Loss 148.033 (148.963)  Loss_bce 26.697 (36.370)  losses_contras_s2s 50.595 (50.021)  losses_contras_p2s 70.741 (62.572)  Mem 15706
+[05/15 05:52:56.862]: Epoch: [20/80][ 900/1293]  T 0.573 (0.576)  DT 0.001 (0.003)  S1 55.8 (55.6)  SA 111.7 (111.1)  LR 4.934e-05  Loss 138.777 (148.984)  Loss_bce 39.877 (36.405)  losses_contras_s2s 35.543 (50.071)  losses_contras_p2s 63.357 (62.508)  Mem 15706
+[05/15 05:53:54.075]: Epoch: [20/80][1000/1293]  T 0.569 (0.575)  DT 0.000 (0.002)  S1 56.3 (55.6)  SA 112.6 (111.2)  LR 4.932e-05  Loss 144.268 (149.193)  Loss_bce 40.240 (36.519)  losses_contras_s2s 41.853 (50.011)  losses_contras_p2s 62.175 (62.662)  Mem 15706
+[05/15 05:54:51.284]: Epoch: [20/80][1100/1293]  T 0.577 (0.575)  DT 0.000 (0.002)  S1 55.5 (55.6)  SA 111.0 (111.3)  LR 4.929e-05  Loss 137.572 (149.181)  Loss_bce 29.485 (36.580)  losses_contras_s2s 25.935 (49.987)  losses_contras_p2s 82.151 (62.615)  Mem 15706
+[05/15 05:55:48.565]: Epoch: [20/80][1200/1293]  T 0.569 (0.575)  DT 0.000 (0.002)  S1 56.3 (55.7)  SA 112.6 (111.3)  LR 4.927e-05  Loss 147.157 (149.021)  Loss_bce 40.068 (36.604)  losses_contras_s2s 51.886 (49.820)  losses_contras_p2s 55.203 (62.597)  Mem 15706
+[05/15 05:59:31.918]: => synchronize...
+[05/15 06:02:43.379]: => synchronize...
+[05/15 06:03:05.042]: => Test Epoch: [20/80]  ETA 18:28:30  TT 0:18:47 (6:34:33)  Loss 154.969  Loss_bce 43.837  Loss_contras 111.285  mAP 0.00000  Loss_ema 147.875  Loss_bce_ema 41.376  Loss_contrast_ema 106.646  mAP_ema 0.00000
+[05/15 06:03:05.047]: 20 | Set best mAP 0 in ep -1
+[05/15 06:03:05.048]:    | best regular mAP 0 in ep -1
+[05/15 06:03:05.115]: lr:4.925055369801002e-05
