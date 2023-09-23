@@ -38,5 +38,5 @@ Our paper was accepted by ECAI2023(European Conference on Artificial Intelligenc
 
 ```
 
-Acknowledgement
+# Acknowledgement
 We thank the authors of Query2label, detr, for their great works and codes. Thanks to @SlongLiu for providing a useful script for training.
