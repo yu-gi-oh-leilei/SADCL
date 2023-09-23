@@ -1,5 +1,6 @@
 # SADCL
- Official PyTorch implementation of the paper "Semantic-Aware Dual Contrastive Learning for Multi-label Image Classification"
+Official PyTorch implementation of the paper "[Semantic-Aware Dual Contrastive Learning for Multi-label Image Classification](https://arxiv.org/format/2307.09715)"
+
 
 Our paper was accepted by ECAI2023(European Conference on Artificial Intelligence).
 
