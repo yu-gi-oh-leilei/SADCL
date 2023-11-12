@@ -35,7 +35,9 @@ Our paper was accepted by ECAI2023(European Conference on Artificial Intelligenc
   journal={arXiv preprint arXiv:2307.09715},
   year={2023}
 }
+```
 or
+```
 @inproceedings{DBLP:conf/ecai/MaSWZ023,
   author       = {Leilei Ma and Dengdi Sun and Lei Wang and Haifeng Zhao and Bin Luo},
   editor       = {Kobi Gal and Ann Now{\'{e}} and Grzegorz J. Nalepa and Roy Fairstein and Roxana Radulescu},
