@@ -35,7 +35,26 @@ Our paper was accepted by ECAI2023(European Conference on Artificial Intelligenc
   journal={arXiv preprint arXiv:2307.09715},
   year={2023}
 }
-
+or
+@inproceedings{DBLP:conf/ecai/MaSWZ023,
+  author       = {Leilei Ma and Dengdi Sun and Lei Wang and Haifeng Zhao and Bin Luo},
+  editor       = {Kobi Gal and Ann Now{\'{e}} and Grzegorz J. Nalepa and Roy Fairstein and Roxana Radulescu},
+  title        = {Semantic-Aware Dual Contrastive Learning for Multi-Label Image Classification},
+  booktitle    = {{ECAI} 2023 - 26th European Conference on Artificial Intelligence,
+                  September 30 - October 4, 2023, Krak{\'{o}}w, Poland - Including
+                  12th Conference on Prestigious Applications of Intelligent Systems
+                  {(PAIS} 2023)},
+  series       = {Frontiers in Artificial Intelligence and Applications},
+  volume       = {372},
+  pages        = {1656--1663},
+  publisher    = {{IOS} Press},
+  year         = {2023},
+  url          = {https://doi.org/10.3233/FAIA230449},
+  doi          = {10.3233/FAIA230449},
+  timestamp    = {Wed, 18 Oct 2023 09:31:16 +0200},
+  biburl       = {https://dblp.org/rec/conf/ecai/MaSWZ023.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
 ```
 # Contact US
 In case of any queries, please feel free to contact us for assistance.
