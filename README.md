@@ -37,7 +37,7 @@ Our paper was accepted by ECAI2023(European Conference on Artificial Intelligenc
 }
 
 ```
-# Contact us
+# Contact US
 In case of any queries, please feel free to contact us for assistance.
 E-mail: xiaoleilei1990@gmail.com
 
